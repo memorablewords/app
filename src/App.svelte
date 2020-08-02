@@ -1,5 +1,6 @@
 <script>
   import Review from "./Review.svelte";
+  import Dashboard from "./Dashboard.svelte";
   import DarkModeToggle from "./DarkModeToggle.svelte";
   import HandSideModeToggle from "./HandSideModeToggle.svelte";
   import ThanksMessageToggle from "./ThanksMessageToggle.svelte";
@@ -8,6 +9,8 @@
   import Icon from "./Icon.svelte";
   import IconTextButton from "./IconTextButton.svelte";
   import {
+    user,
+    lists,
     darkMode,
     handSideMode,
     thanksMessageVisible,
@@ -67,13 +70,13 @@
   }
 </style>
 
-<Grid dark={$darkMode}>
+<Grid dark={$darkMode} withFooter={$page !== REVIEW_PAGE}>
   <div class="slot" slot="header">
     <IconTextButton
       type="memorablewords"
       text="Memorable Words"
       title="Home"
-      onclick={() => dispatch({ type: 'VIEW_PAGE', value: REVIEW_PAGE })} />
+      onclick={() => dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE })} />
   </div>
   <div class="slot" slot="side">
     <div class="controls">
@@ -85,14 +88,17 @@
           enabled={$thanksMessageVisible}
           onclick={() => dispatch({ type: 'TOGGLE_THANKS_MESSAGE' })} />
       {/if}
-      <HandSideModeToggle
-        enabled={$handSideMode}
-        onclick={() => dispatch({ type: 'TOGGLE_HAND_SIDE_MODE' })} />
+      {#if $page === REVIEW_PAGE}
+        <HandSideModeToggle
+          enabled={$handSideMode}
+          onclick={() => dispatch({ type: 'TOGGLE_HAND_SIDE_MODE' })} />
+      {/if}
     </div>
   </div>
   <div class="slot" slot="main">
-
-    {#if $page === REVIEW_PAGE}
+    {#if $page === DASHBOARD_PAGE}
+      <Dashboard lists={$lists} user={$user} />
+    {:else if $page === REVIEW_PAGE}
       <Review
         current={currentWord}
         previous={previousWord}
