@@ -47,9 +47,8 @@ Then, from within the `app` folder:
 
 ```bash
 git checkout main && git pull origin main
-make release # will build the app and create a new release
+make release record-release # will build the app and create and record a new release
 make deploy # will deploy the new release
-make record-release
 git push origin main
 ```
 
