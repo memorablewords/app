@@ -10,6 +10,7 @@
   --app-neutral-color: #817376;
   --pink-color: #dd1d80;
   --app-border-radius: 8px;
+  --muted-color: #6b6b6b;
 }
 
 .dark {
@@ -19,6 +20,7 @@
   --overlay-color: var(--alternate-color);
   --overlay-border-color: #fafbfcc8;
   --app-link-color: #2491ff;
+  --muted-color: #8f8f8f;
 }
 
 html,

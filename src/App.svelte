@@ -1,4 +1,5 @@
 <script>
+  import Welcome from "./Welcome.svelte";
   import Review from "./Review.svelte";
   import Dashboard from "./Dashboard.svelte";
   import DarkModeToggle from "./DarkModeToggle.svelte";
@@ -18,7 +19,13 @@
     page
   } from "./stores";
   import { dispatch, DECISION_YES, DECISION_NO, DECISION_REJECT } from "./app";
-  import { DASHBOARD_PAGE, REVIEW_PAGE } from "./pages.js";
+  import {
+    WELCOME_PAGE,
+    SIGN_IN_PAGE,
+    DASHBOARD_PAGE,
+    REVIEW_PAGE,
+    CONTRIBUTE_PAGE
+  } from "./pages.js";
   // import { onMount } from "svelte";
   // import { version } from "./version.js";
 
@@ -70,50 +77,214 @@
   }
 </style>
 
-<Grid dark={$darkMode} withFooter={$page !== REVIEW_PAGE}>
-  <div class="slot" slot="header">
-    <IconTextButton
-      type="memorablewords"
-      text="Memorable Words"
-      title="Home"
-      onclick={() => dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE })} />
-  </div>
-  <div class="slot" slot="side">
-    <div class="controls">
-      <DarkModeToggle
-        enabled={$darkMode}
-        onclick={() => dispatch({ type: 'TOGGLE_DARK_MODE' })} />
-      {#if $contributionPresent}
-        <ThanksMessageToggle
-          enabled={$thanksMessageVisible}
-          onclick={() => dispatch({ type: 'TOGGLE_THANKS_MESSAGE' })} />
-      {/if}
-      {#if $page === REVIEW_PAGE}
-        <HandSideModeToggle
-          enabled={$handSideMode}
-          onclick={() => dispatch({ type: 'TOGGLE_HAND_SIDE_MODE' })} />
+{#if $page === WELCOME_PAGE}
+  <Welcome dark={$darkMode} />
+{:else if $page === SIGN_IN_PAGE}
+
+  <Grid dark={$darkMode} withFooter={$page !== REVIEW_PAGE}>
+    <div class="slot" slot="header">
+      <IconTextButton
+        type="memorablewords"
+        text="Memorable Words"
+        title="Home"
+        onclick={() => dispatch({
+            type: 'VIEW_PAGE',
+            value: DASHBOARD_PAGE
+          })} />
+    </div>
+    <div class="slot" slot="side">
+      <div class="controls">
+        <DarkModeToggle
+          enabled={$darkMode}
+          onclick={() => dispatch({ type: 'TOGGLE_DARK_MODE' })} />
+        {#if $contributionPresent}
+          <ThanksMessageToggle
+            enabled={$thanksMessageVisible}
+            onclick={() => dispatch({ type: 'TOGGLE_THANKS_MESSAGE' })} />
+        {/if}
+        {#if $page === REVIEW_PAGE}
+          <HandSideModeToggle
+            enabled={$handSideMode}
+            onclick={() => dispatch({ type: 'TOGGLE_HAND_SIDE_MODE' })} />
+        {/if}
+      </div>
+    </div>
+    <div class="slot" slot="main">
+      {#if $page === DASHBOARD_PAGE}
+        <Dashboard lists={$lists} user={$user} />
+      {:else if $page === REVIEW_PAGE}
+        <Review
+          current={currentWord}
+          previous={previousWord}
+          mirror={$handSideMode} />
       {/if}
     </div>
-  </div>
-  <div class="slot" slot="main">
-    {#if $page === DASHBOARD_PAGE}
-      <Dashboard lists={$lists} user={$user} />
-    {:else if $page === REVIEW_PAGE}
-      <Review
-        current={currentWord}
-        previous={previousWord}
-        mirror={$handSideMode} />
-    {/if}
-  </div>
-  <div class="slot credits" slot="footer">
-    <p>
-      Made with love by
-      <a href="https://github.com/memorablewords">@gonzalo-bulnes</a>
-    </p>
-  </div>
-</Grid>
-{#if $thanksMessageVisible}
-  <div class="thanks">
-    <ThanksMessage attribution="Shimering Unicorn" dark={$darkMode} />
-  </div>
+    <div class="slot credits" slot="footer">
+      <p>
+        Made with love by
+        <a href="https://github.com/memorablewords">@gonzalo-bulnes</a>
+      </p>
+    </div>
+  </Grid>
+  {#if $thanksMessageVisible}
+    <div class="thanks">
+      <ThanksMessage attribution="Shimering Unicorn" dark={$darkMode} />
+    </div>
+  {/if}
+{:else if $page === DASHBOARD_PAGE}
+
+  <Grid dark={$darkMode} withFooter={$page !== REVIEW_PAGE}>
+    <div class="slot" slot="header">
+      <IconTextButton
+        type="memorablewords"
+        text="Memorable Words"
+        title="Home"
+        onclick={() => dispatch({
+            type: 'VIEW_PAGE',
+            value: DASHBOARD_PAGE
+          })} />
+    </div>
+    <div class="slot" slot="side">
+      <div class="controls">
+        <DarkModeToggle
+          enabled={$darkMode}
+          onclick={() => dispatch({ type: 'TOGGLE_DARK_MODE' })} />
+        {#if $contributionPresent}
+          <ThanksMessageToggle
+            enabled={$thanksMessageVisible}
+            onclick={() => dispatch({ type: 'TOGGLE_THANKS_MESSAGE' })} />
+        {/if}
+        {#if $page === REVIEW_PAGE}
+          <HandSideModeToggle
+            enabled={$handSideMode}
+            onclick={() => dispatch({ type: 'TOGGLE_HAND_SIDE_MODE' })} />
+        {/if}
+      </div>
+    </div>
+    <div class="slot" slot="main">
+      {#if $page === DASHBOARD_PAGE}
+        <Dashboard lists={$lists} user={$user} />
+      {:else if $page === REVIEW_PAGE}
+        <Review
+          current={currentWord}
+          previous={previousWord}
+          mirror={$handSideMode} />
+      {/if}
+    </div>
+    <div class="slot credits" slot="footer">
+      <p>
+        Made with love by
+        <a href="https://github.com/memorablewords">@gonzalo-bulnes</a>
+      </p>
+    </div>
+  </Grid>
+  {#if $thanksMessageVisible}
+    <div class="thanks">
+      <ThanksMessage attribution="Shimering Unicorn" dark={$darkMode} />
+    </div>
+  {/if}
+{:else if $page === REVIEW_PAGE}
+
+  <Grid dark={$darkMode} withFooter={$page !== REVIEW_PAGE}>
+    <div class="slot" slot="header">
+      <IconTextButton
+        type="memorablewords"
+        text="Memorable Words"
+        title="Home"
+        onclick={() => dispatch({
+            type: 'VIEW_PAGE',
+            value: DASHBOARD_PAGE
+          })} />
+    </div>
+    <div class="slot" slot="side">
+      <div class="controls">
+        <DarkModeToggle
+          enabled={$darkMode}
+          onclick={() => dispatch({ type: 'TOGGLE_DARK_MODE' })} />
+        {#if $contributionPresent}
+          <ThanksMessageToggle
+            enabled={$thanksMessageVisible}
+            onclick={() => dispatch({ type: 'TOGGLE_THANKS_MESSAGE' })} />
+        {/if}
+        {#if $page === REVIEW_PAGE}
+          <HandSideModeToggle
+            enabled={$handSideMode}
+            onclick={() => dispatch({ type: 'TOGGLE_HAND_SIDE_MODE' })} />
+        {/if}
+      </div>
+    </div>
+    <div class="slot" slot="main">
+      {#if $page === DASHBOARD_PAGE}
+        <Dashboard lists={$lists} user={$user} />
+      {:else if $page === REVIEW_PAGE}
+        <Review
+          current={currentWord}
+          previous={previousWord}
+          mirror={$handSideMode} />
+      {/if}
+    </div>
+    <div class="slot credits" slot="footer">
+      <p>
+        Made with love by
+        <a href="https://github.com/memorablewords">@gonzalo-bulnes</a>
+      </p>
+    </div>
+  </Grid>
+  {#if $thanksMessageVisible}
+    <div class="thanks">
+      <ThanksMessage attribution="Shimering Unicorn" dark={$darkMode} />
+    </div>
+  {/if}
+{:else if $page === CONTRIBUTE_PAGE}
+
+  <Grid dark={$darkMode} withFooter={$page !== REVIEW_PAGE}>
+    <div class="slot" slot="header">
+      <IconTextButton
+        type="memorablewords"
+        text="Memorable Words"
+        title="Home"
+        onclick={() => dispatch({
+            type: 'VIEW_PAGE',
+            value: DASHBOARD_PAGE
+          })} />
+    </div>
+    <div class="slot" slot="side">
+      <div class="controls">
+        <DarkModeToggle
+          enabled={$darkMode}
+          onclick={() => dispatch({ type: 'TOGGLE_DARK_MODE' })} />
+        {#if $contributionPresent}
+          <ThanksMessageToggle
+            enabled={$thanksMessageVisible}
+            onclick={() => dispatch({ type: 'TOGGLE_THANKS_MESSAGE' })} />
+        {/if}
+        {#if $page === REVIEW_PAGE}
+          <HandSideModeToggle
+            enabled={$handSideMode}
+            onclick={() => dispatch({ type: 'TOGGLE_HAND_SIDE_MODE' })} />
+        {/if}
+      </div>
+    </div>
+    <div class="slot" slot="main">
+      {#if $page === DASHBOARD_PAGE}
+        <Dashboard lists={$lists} user={$user} />
+      {:else if $page === REVIEW_PAGE}
+        <Review
+          current={currentWord}
+          previous={previousWord}
+          mirror={$handSideMode} />
+      {/if}
+    </div>
+    <div class="slot credits" slot="footer">
+      <p>
+        Made with love by
+        <a href="https://github.com/memorablewords">@gonzalo-bulnes</a>
+      </p>
+    </div>
+  </Grid>
+  {#if $thanksMessageVisible}
+    <div class="thanks">
+      <ThanksMessage attribution="Shimering Unicorn" dark={$darkMode} />
+    </div>
+  {/if}
 {/if}
