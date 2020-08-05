@@ -1,25 +1,123 @@
 <script>
-  import { user } from "./stores";
+  import { darkMode, page, user } from "./stores";
+  import { DASHBOARD_PAGE } from "./pages.js";
+  import { dispatch } from "./app";
+  import CallToActionButton from "./CallToActionButton.svelte";
+  import Header from "./Header.svelte";
+  import Icon from "./Icon.svelte";
+
+  export let dark = false;
 </script>
 
-<form>
-  <fieldset>
-    <legend>Getting started</legend>
-    <p>Hi, I'm Gonzalo.</p>
+<style>
+  section {
+    align-items: flex-start;
+    background-color: var(--second-color);
+    box-sizing: border-box;
+    color: var(--app-primary-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: start;
+    padding: var(--app-padding);
+  }
+
+  main {
+    height: 100%;
+    padding: 2rem 0;
+  }
+
+  input,
+  label,
+  span {
+    display: block;
+    line-height: 1.5rem;
+    width: 100%;
+  }
+
+  label {
+    font-weight: bold;
+    padding: 8px 0;
+  }
+
+  input {
+    padding: 7px;
+  }
+
+  .next {
+    display: flex;
+    justify-content: right;
+    margin: 3rem 0 auto auto;
+  }
+
+  footer,
+  footer p {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  footer p {
+    font-size: 0.8rem;
+    height: var(--app-touch-target-size);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+</style>
+
+<section class={dark ? 'dark' : ''}>
+  <Header />
+
+  <main>
+    <form>
+      <p>
+        <label for="username">
+          Username
+          <small>(required)</small>
+        </label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="gonzalo-bulnes"
+          required />
+        <span>
+          Your username allows you to keep track of your contributions over
+          time.
+        </span>
+      </p>
+      <p>
+        <label for="attribution">Preferred attribution</label>
+        <input
+          type="text"
+          name="attribution"
+          id="attribution"
+          placeholder="Gonzalo Bulnes Guilpain" />
+        <span>
+          This is how your contributions will be attributed to you in the
+          Memorable Words website.
+        </span>
+      </p>
+
+      <div class="next">
+        <CallToActionButton
+          type="check"
+          text="READY"
+          title="Continue"
+          onclick={() => dispatch({
+              type: 'VIEW_PAGE',
+              value: DASHBOARD_PAGE
+            })} />
+      </div>
+    </form>
+  </main>
+
+  <footer>
     <p>
-      <label for="name">How do you prefer I call you?</label>
-      <input type="text" name="name" id="name" />
+      made&nbsp;with&nbsp;♥️&nbsp;by&nbsp;
+      <a href="https://github.com/memorablewords">@gonzalo-bulnes</a>
     </p>
-    <p>Hi {$user ? $user.name : '<em>your name here</em>'}!</p>
-    <p>
-      <label for="attribution">
-        How to you prefer I attribute your contributions?
-      </label>
-      <input
-        type="text"
-        name="attribution"
-        id="attribution"
-        placeholder="Gonzalo Bulnes Guilpain" />
-    </p>
-  </fieldset>
-</form>
+  </footer>
+</section>

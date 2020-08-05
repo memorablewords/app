@@ -33,7 +33,7 @@
   button:hover,
   button:focus {
     border-bottom: 1px solid var(--app-primary-color);
-    /* border-top: 1px solid var(--second-color); */
+    border-top: 1px solid var(--second-color);
     border-radius: 0;
   }
 
