@@ -16,7 +16,7 @@
     font-weight: 500;
     height: var(--app-touch-target-size);
     justify-content: center;
-    letter-spacing: 0.075em;
+    letter-spacing: 0.05em;
     margin: 0;
     min-width: var(--app-touch-target-size);
     padding: 0 var(--app-padding) 0 0;

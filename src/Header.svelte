@@ -24,7 +24,8 @@
 </script>
 
 <style>
-  div {
+  div,
+  .controls {
     display: flex;
   }
 </style>
