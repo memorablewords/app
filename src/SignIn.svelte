@@ -5,8 +5,29 @@
   import CallToActionButton from "./CallToActionButton.svelte";
   import Header from "./Header.svelte";
   import Icon from "./Icon.svelte";
+  import { validUser } from "./user";
 
   export let dark = false;
+  let username = "";
+  let attribution = "";
+
+  $: username = "";
+  $: attribution = "";
+  let customAttribution = false;
+  let valid = false;
+
+  $: attribution = customAttribution ? attribution : username;
+  $: currentUser = { username: username, attribution: attribution };
+  $: valid = validUser(currentUser);
+
+  const setUsername = event => {
+    username = event.target.value;
+  };
+
+  const setAttribution = event => {
+    attribution = event.target.value;
+    customAttribution = true;
+  };
 </script>
 
 <style>
@@ -82,7 +103,8 @@
           name="username"
           id="username"
           placeholder="gonzalo-bulnes"
-          required />
+          required
+          on:input={setUsername} />
         <span>
           Your username allows you to keep track of your contributions over
           time.
@@ -94,7 +116,9 @@
           type="text"
           name="attribution"
           id="attribution"
-          placeholder="Gonzalo Bulnes Guilpain" />
+          placeholder="Gonzalo Bulnes Guilpain"
+          value={attribution}
+          on:input={setAttribution} />
         <span>
           This is how your contributions will be attributed to you in the
           Memorable Words website.
@@ -106,10 +130,13 @@
           type="check"
           text="READY"
           title="Continue"
-          onclick={() => dispatch({
-              type: 'VIEW_PAGE',
-              value: DASHBOARD_PAGE
-            })} />
+          disabled={!valid}
+          onclick={() => {
+            if (valid) {
+              dispatch({ type: 'SET_USER', value: currentUser });
+              dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE });
+            }
+          }} />
       </div>
     </form>
   </main>

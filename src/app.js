@@ -1,5 +1,10 @@
-import { darkMode, handSideMode, page, thanksMessageVisible } from "./stores";
-
+import {
+  darkMode,
+  handSideMode,
+  page,
+  thanksMessageVisible,
+  user,
+} from "./stores";
 export const DECISION_YES = "yes-ncvow";
 export const DECISION_NO = "no-sebak";
 export const DECISION_REJECT = "reject-qwpcn";
@@ -9,6 +14,9 @@ export let state = defaultState;
 
 function app(state, action) {
   switch (action.type) {
+    case "SET_USER":
+      user.update(() => action.value);
+      break;
     case "TOGGLE_DARK_MODE":
       darkMode.update((dark) => (!dark ? true : false));
       break;

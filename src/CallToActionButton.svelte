@@ -6,6 +6,7 @@
   export let text;
   export let title;
   export let onclick = () => {};
+  export let disabled = false;
 </script>
 
 <style>
@@ -35,6 +36,11 @@
     border: 0;
   }
 
+  button:disabled {
+    color: var(--muted-color);
+    border-color: var(--muted-color);
+  }
+
   button span {
     padding: 0 0 0.125rem var(--app-padding);
   }
@@ -44,7 +50,7 @@
   }
 </style>
 
-<button on:click={onclick} {title}>
+<button type="button" on:click={onclick} {title} {disabled}>
   <span>{text}</span>
   <div class="icon">
     <Icon illustrative {type} {size} />
