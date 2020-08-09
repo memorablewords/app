@@ -1,5 +1,6 @@
 export const USERNAME_KEY = "username-she3e";
 export const ATTRIBUTION_KEY = "attribution-9432d";
+export const DARK_MODE_KEY = "darkMode-lduwe";
 
 export function storeUser(user) {
   localStorage.setItem(USERNAME_KEY, user.username);
@@ -7,10 +8,29 @@ export function storeUser(user) {
 }
 
 export function getUserFromStorage() {
+  let username = sanitize(localStorage.getItem(USERNAME_KEY));
+  if (username === "") {
+    return undefined;
+  }
   return {
-    username: localStorage.getItem(USERNAME_KEY),
-    attribution: localStorage.getItem(ATTRIBUTION_KEY),
+    username: username,
+    attribution: sanitize(localStorage.getItem(ATTRIBUTION_KEY)),
   };
+}
+
+export function storeDarkMode(mode) {
+  localStorage.setItem(DARK_MODE_KEY, mode);
+}
+
+export function getDarkModeFromStorage() {
+  return localStorage.getItem(DARK_MODE_KEY) === "true";
+}
+
+function sanitize(value) {
+  if (!value || value === "null") {
+    return "";
+  }
+  return value;
 }
 
 /* storageAvailable detects whether localStorage is both supported and available.

@@ -1,6 +1,7 @@
 <script>
   import { dispatch } from "./app";
-  import { SIGN_IN_PAGE } from "./pages.js";
+  import { DASHBOARD_PAGE, SIGN_IN_PAGE } from "./pages.js";
+  import { user } from "./stores";
   import CallToActionButton from "./CallToActionButton.svelte";
   import Icon from "./Icon.svelte";
 
@@ -72,7 +73,7 @@
   }
 </style>
 
-<section class="grid {dark ? 'dark' : ''}">
+<section class={dark ? 'dark' : ''}>
   <header>
     <Icon type="memorablewords-2" size="128" />
     <h1>
@@ -89,7 +90,13 @@
       type="arrow-right"
       text="GET STARTED"
       title="Sign in"
-      onclick={() => dispatch({ type: 'VIEW_PAGE', value: SIGN_IN_PAGE })} />
+      onclick={() => {
+        if ($user) {
+          dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE });
+        } else {
+          dispatch({ type: 'VIEW_PAGE', value: SIGN_IN_PAGE });
+        }
+      }} />
   </main>
 
   <footer>

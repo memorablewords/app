@@ -1,4 +1,11 @@
-import { getUserFromStorage, storageAvailable, storeUser } from "./storage";
+import { get } from "svelte/store";
+import {
+  getDarkModeFromStorage,
+  getUserFromStorage,
+  storageAvailable,
+  storeDarkMode,
+  storeUser,
+} from "./storage";
 import {
   darkMode,
   handSideMode,
@@ -17,9 +24,8 @@ function app(state, action) {
   switch (action.type) {
     case "INIT":
       if (storageAvailable("localStorage")) {
-        user.update(() => {
-          return getUserFromStorage();
-        });
+        user.update(() => getUserFromStorage());
+        darkMode.update(() => getDarkModeFromStorage());
       } else {
         // FIXME Handle case where local storage is not available
       }
@@ -30,6 +36,7 @@ function app(state, action) {
       break;
     case "TOGGLE_DARK_MODE":
       darkMode.update((dark) => (!dark ? true : false));
+      storeDarkMode(get(darkMode));
       break;
     case "TOGGLE_HAND_SIDE_MODE":
       handSideMode.update((handSideMode) => (!handSideMode ? true : false));

@@ -8,21 +8,16 @@
   import { validUser } from "./user";
 
   export let dark = false;
-  let username = "";
-  let attribution = "";
-
-  $: username = "";
-  $: attribution = "";
-  let customAttribution = false;
+  let username = $user && $user.username;
+  let attribution = $user && $user.attribution;
+  let customAttributionInStorage =
+    $user && $user.username !== $user.attribution;
+  let customAttribution = customAttributionInStorage;
   let valid = false;
 
   $: attribution = customAttribution ? attribution : username;
   $: currentUser = { username: username, attribution: attribution };
   $: valid = validUser(currentUser);
-
-  const setUsername = event => {
-    username = event.target.value;
-  };
 
   const setAttribution = event => {
     attribution = event.target.value;
@@ -65,6 +60,10 @@
     padding: 7px;
   }
 
+  input:invalid {
+    box-shadow: none;
+  }
+
   .next {
     display: flex;
     justify-content: right;
@@ -104,9 +103,9 @@
           id="username"
           placeholder="gonzalo-bulnes"
           required
-          on:input={setUsername} />
+          bind:value={username} />
         <span>
-          Your username allows you to keep track of your contributions over
+          Your username will allow you to keep track of your contributions over
           time.
         </span>
       </p>
@@ -117,7 +116,7 @@
           name="attribution"
           id="attribution"
           placeholder="Gonzalo Bulnes Guilpain"
-          value={attribution}
+          bind:value={attribution}
           on:input={setAttribution} />
         <span>
           This is how your contributions will be attributed to you in the
