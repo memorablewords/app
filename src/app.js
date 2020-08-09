@@ -1,3 +1,4 @@
+import { getUserFromStorage, storageAvailable, storeUser } from "./storage";
 import {
   darkMode,
   handSideMode,
@@ -14,8 +15,18 @@ export let state = defaultState;
 
 function app(state, action) {
   switch (action.type) {
+    case "INIT":
+      if (storageAvailable("localStorage")) {
+        user.update(() => {
+          return getUserFromStorage();
+        });
+      } else {
+        // FIXME Handle case where local storage is not available
+      }
+      break;
     case "SET_USER":
       user.update(() => action.value);
+      storeUser(action.value);
       break;
     case "TOGGLE_DARK_MODE":
       darkMode.update((dark) => (!dark ? true : false));

@@ -28,12 +28,13 @@
     REVIEW_PAGE,
     CONTRIBUTE_PAGE
   } from "./pages.js";
-  // import { onMount } from "svelte";
+  import { onMount } from "svelte";
   // import { version } from "./version.js";
 
-  // onMount(() => {
-  //   // dispatch({ type: "INIT" });
-  // });
+  onMount(() => {
+    dispatch({ type: "INIT" });
+  });
+
   let previousWord = {
     value: "remesa",
     decision: DECISION_YES
