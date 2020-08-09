@@ -17,8 +17,7 @@
     margin: 0;
     min-width: var(--app-touch-target-size);
     justify-content: center;
-    padding-right: var(--app-padding);
-    padding-left: 0;
+    padding: var(--app-padding);
   }
 
   button:hover,
@@ -33,7 +32,6 @@
   }
 
   button.enabled {
-    padding-right: 0;
     padding-left: var(--app-padding);
   }
 </style>
@@ -46,10 +44,8 @@
   class:enabled
   title={enabled ? 'Enable right-handed mode' : 'Enable left-handed mode'}>
   {#if enabled}
-    Flip
-    <Icon illustrative type="chevron-right" size="24" />
+    <Icon illustrative type="flip-2" size="24" />
   {:else}
-    <Icon illustrative type="chevron-left" size="24" />
-    Flip
+    <Icon illustrative type="flip" size="24" />
   {/if}
 </button>
