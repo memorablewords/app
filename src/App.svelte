@@ -90,7 +90,7 @@
     </div>
   {/if}
 {:else if $page === DASHBOARD_PAGE}
-  <Dashboard lists={$lists} {user} dark={$darkMode} />
+  <Dashboard lists={$lists} dark={$darkMode} />
 
   {#if $thanksMessageVisible}
     <div class="thanks">
