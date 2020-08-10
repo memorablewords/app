@@ -44,15 +44,17 @@
     <DarkModeToggle
       enabled={$darkMode}
       onclick={() => dispatch({ type: 'TOGGLE_DARK_MODE' })} />
-    {#if $user && $contributionPresent && false}
+    {#if $user && $contributionPresent && $page === DASHBOARD_PAGE}
       <ThanksMessageToggle
         enabled={$thanksMessageVisible}
         onclick={() => dispatch({ type: 'TOGGLE_THANKS_MESSAGE' })} />
     {/if}
-    {#if $page === REVIEW_PAGE}
+    {#if $page === REVIEW_PAGE || $page === DASHBOARD_PAGE}
       <UploadPreferencesToggle
         enabled={$uploadPreferencesOpen}
         onclick={() => dispatch({ type: 'SHOW_UPLOAD_PREFERENCES' })} />
+    {/if}
+    {#if $page === REVIEW_PAGE}
       <HandSideModeToggle
         enabled={$handSideMode}
         onclick={() => dispatch({ type: 'TOGGLE_HAND_SIDE_MODE' })} />
