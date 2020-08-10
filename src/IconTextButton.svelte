@@ -17,43 +17,29 @@
   button {
     align-items: center;
     background-color: var(--second-color);
-    border: none;
+    border-radius: 0;
+    border: 1px dotted var(--app-primary-color);
     box-sizing: border-box;
     color: var(--app-primary-color);
     display: flex;
     font-weight: 500;
-    height: var(--app-touch-target-size);
+    height: calc(100% - 4px);
     justify-content: center;
     margin: 0;
     min-width: var(--app-touch-target-size);
     padding: 0 var(--app-padding) 0 0;
     white-space: nowrap;
+    width: calc(100% - 4px);
   }
 
   button:hover,
   button:focus {
-    border-bottom: 1px solid var(--app-primary-color);
-    border-top: 1px solid var(--second-color);
+    border-style: solid;
     border-radius: 0;
   }
 
   button::-moz-focus-inner {
     border: 0;
-  }
-
-  .fluid {
-    width: calc(100% - 4px);
-    border: 1px dotted var(--app-primary-color);
-    border-radius: 0;
-  }
-
-  .fluid:hover,
-  .fluid:focus {
-    border-style: solid;
-  }
-
-  .large {
-    height: calc(100% - 4px);
   }
 
   .color {
@@ -71,20 +57,13 @@
     border-top-color: #d14253 !important;
   }
 
-  .logo {
+  .icon {
     padding-right: var(--app-padding);
   }
 </style>
 
-<button
-  on:click={onclick}
-  {title}
-  class:fluid
-  class:large
-  class:red
-  class:green
-  class:color>
-  <div class="logo">
+<button on:click={onclick} {title} class:red class:green class:color>
+  <div class="icon">
     <Icon illustrative {type} {size} />
   </div>
   {text}

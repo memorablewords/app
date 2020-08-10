@@ -19,7 +19,6 @@
   } from "./stores";
   import DarkModeToggle from "./DarkModeToggle.svelte";
   import HandSideModeToggle from "./HandSideModeToggle.svelte";
-  import IconTextButton from "./IconTextButton.svelte";
   import Logo from "./Logo.svelte";
   import ThanksMessage from "./ThanksMessage.svelte";
   import ThanksMessageToggle from "./ThanksMessageToggle.svelte";
@@ -45,7 +44,7 @@
     <DarkModeToggle
       enabled={$darkMode}
       onclick={() => dispatch({ type: 'TOGGLE_DARK_MODE' })} />
-    {#if $user && $contributionPresent}
+    {#if $user && $contributionPresent && false}
       <ThanksMessageToggle
         enabled={$thanksMessageVisible}
         onclick={() => dispatch({ type: 'TOGGLE_THANKS_MESSAGE' })} />
