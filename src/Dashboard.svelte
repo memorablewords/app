@@ -52,19 +52,6 @@
   <Header />
 
   <main>
-    <ol>
-      <li>Pick a list</li>
-      <li>Review as many words as you want</li>
-      <li class="example">
-        <div class="button">
-          <UploadPreferencesToggleAlt
-            enabled={$uploadPreferencesOpen}
-            onclick={() => dispatch({ type: 'SHOW_UPLOAD_PREFERENCES' })} />
-        </div>
-        Get your contributions ready for sharing using the upload button
-      </li>
-      <li>Send your contributions and repeat!</li>
-    </ol>
     <Lists {lists} />
   </main>
 
