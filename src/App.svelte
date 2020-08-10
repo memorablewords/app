@@ -83,20 +83,8 @@
   <Welcome dark={$darkMode} />
 {:else if $page === SIGN_IN_PAGE}
   <SignIn dark={$darkMode} />
-
-  {#if $thanksMessageVisible}
-    <div class="thanks">
-      <ThanksMessage attribution="Shimering Unicorn" dark={$darkMode} />
-    </div>
-  {/if}
 {:else if $page === DASHBOARD_PAGE}
   <Dashboard lists={$lists} dark={$darkMode} />
-
-  {#if $thanksMessageVisible}
-    <div class="thanks">
-      <ThanksMessage attribution="Shimering Unicorn" dark={$darkMode} />
-    </div>
-  {/if}
 {:else if $page === REVIEW_PAGE}
   <Review
     dark={$darkMode}

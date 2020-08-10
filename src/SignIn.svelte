@@ -5,7 +5,7 @@
   import CallToActionButton from "./CallToActionButton.svelte";
   import Header from "./Header.svelte";
   import Icon from "./Icon.svelte";
-  import { validUser } from "./user";
+  import { validUser, isContributor } from "./user";
 
   export let dark = false;
   let username = $user && $user.username;
@@ -45,10 +45,15 @@
 
   input,
   label,
-  span {
+  span,
+  p {
     display: block;
     line-height: 1.5rem;
     width: 100%;
+  }
+
+  span {
+    color: var(--muted-color);
   }
 
   label {
@@ -85,6 +90,13 @@
     padding: 0;
     text-align: center;
   }
+
+  .illustration {
+    color: var(--pink-color);
+    float: left;
+    padding: var(--app-padding) calc(2 * var(--app-padding)) var(--app-padding)
+      var(--app-padding);
+  }
 </style>
 
 <section class={dark ? 'dark' : ''}>
@@ -109,6 +121,14 @@
           time.
         </span>
       </p>
+      {#if isContributor(username)}
+        <div class="thanks">
+          <div class="illustration">
+            <Icon illustrative type="heart-full" size="32" />
+          </div>
+          <p>Welcome back! Thank you so much for you time and care!</p>
+        </div>
+      {/if}
       <p>
         <label for="attribution">Preferred attribution</label>
         <input
