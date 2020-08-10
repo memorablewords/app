@@ -24,19 +24,30 @@
 
 <div class="summary" style="height:{size}">
   <div class="metric">
-    <Progress {total} {size} value={total} color="var(--muted-color)" />
+    <Progress {total} {size} value={total} color="var(--app-primary-color)" />
   </div>
   <div class="metric">
-    <Progress {total} {size} value={reviewed} color="dodgerblue" />
+    <Progress
+      {total}
+      {size}
+      value={reviewed}
+      color="var(--app-primary-color)"
+      dotted />
   </div>
   <div class="metric">
     <Progress
       {total}
       {size}
       value={acceptedContributions + pendingContributions}
-      color="gold" />
+      color="var(--app-primary-color)"
+      backwards />
   </div>
   <div class="metric">
-    <Progress {total} {size} value={acceptedContributions} color="limegreen" />
+    <Progress
+      {total}
+      {size}
+      value={acceptedContributions}
+      color="var(--app-primary-color)"
+      diagonal />
   </div>
 </div>
