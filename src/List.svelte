@@ -1,5 +1,5 @@
 <script>
-  import IconTextButton from "./IconTextButton.svelte";
+  import IconButton from "./IconButton.svelte";
   import { dispatch } from "./app";
   import { REVIEW_PAGE } from "./pages.js";
 
@@ -14,7 +14,7 @@
       "description icon";
     grid-template-columns: auto var(--app-touch-target-size);
     grid-template-rows: auto auto;
-    padding: 8px;
+    padding: 0 0 0 var(--app-padding);
     text-align: left;
     border: 1px solid var(--muted-color);
     border-width: 1px 0;
@@ -25,19 +25,22 @@
     padding: 0;
     font-size: 1rem;
     font-weight: bold;
-    line-height: 1.5rem;
+    line-height: 3rem;
     grid-area: title;
   }
   .description {
     grid-area: description;
     font-size: 0.8rem;
-    padding: 0;
+    padding: 0 0 8px;
     margin: 0;
     line-height: 1.5rem;
     color: var(--muted-color);
   }
   .icon {
     grid-area: icon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
 
@@ -45,12 +48,9 @@
   <h2>{list.name}</h2>
   <p class="description">{list.description}</p>
   <div class="icon">
-    <IconTextButton
+    <IconButton
       type="chevron-right"
-      text=""
       title="Start review"
-      large
-      fluid
       onclick={() => dispatch({ type: 'VIEW_PAGE', value: REVIEW_PAGE })} />
   </div>
 </article>

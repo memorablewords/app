@@ -13,18 +13,18 @@
     align-items: center;
     background-color: var(--second-color);
     border: none;
-    color: var(--monitor-primary-color);
+    color: var(--app-primary-color);
     display: flex;
-    height: var(--monitor-touch-target-size);
+    height: 100%;
     padding: 0;
     margin: 0;
-    min-width: var(--monitor-touch-target-size);
+    min-width: var(--app-touch-target-size);
     justify-content: center;
   }
 
   button:hover,
   button:focus {
-    border-bottom: 1px solid var(--monitor-primary-color);
+    border-bottom: 1px solid var(--app-primary-color);
     border-top: 1px solid var(--second-color);
     border-radius: 0;
   }
@@ -34,7 +34,7 @@
   }
 
   .disabled {
-    color: var(--monitor-neutral-color);
+    color: var(--app-neutral-color);
   }
 
   .disabled:hover,
