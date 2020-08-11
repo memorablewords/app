@@ -7,7 +7,6 @@
   import Icon from "./Icon.svelte";
   import { validUser, isContributor } from "./user";
 
-  export let dark = false;
   let username = $user && $user.username;
   let attribution = $user && $user.attribution;
   let customAttributionInStorage =
@@ -99,7 +98,7 @@
   }
 </style>
 
-<section class={dark ? 'dark' : ''}>
+<section>
   <Header />
 
   <main>

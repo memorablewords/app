@@ -13,15 +13,17 @@
 
 <style>
   section {
+    position: relative;
     align-items: flex-start;
     background-color: var(--second-color);
     box-sizing: border-box;
     color: var(--app-primary-color);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
     justify-content: start;
     padding: var(--app-padding);
+    height: 100%;
   }
 
   main {

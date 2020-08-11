@@ -10,10 +10,10 @@
 
 <style>
   section {
-    align-items: flex-start;
     background-color: var(--second-color);
-    box-sizing: border-box;
     color: var(--app-primary-color);
+    align-items: flex-start;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 100%;

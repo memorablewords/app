@@ -44,51 +44,25 @@
 </script>
 
 <style>
-  .controls {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 var(--app-padding);
-    grid-area: controls;
-  }
-
-  .slot {
-    width: 100%;
-    height: 100%;
-  }
-
-  .thanks {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--overlay-color);
-    height: 100%;
-    width: 100%;
-  }
-
-  .credits {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .credits p {
-    font-size: 0.8rem;
-    text-align: center;
-    padding: 0;
-    margin: 0;
+  div {
+    background-color: var(--second-color);
+    color: var(--app-primary-color);
+    height: 100vh;
+    position: relative;
   }
 </style>
 
-{#if $page === WELCOME_PAGE}
-  <Welcome dark={$darkMode} />
-{:else if $page === SIGN_IN_PAGE}
-  <SignIn dark={$darkMode} />
-{:else if $page === DASHBOARD_PAGE}
-  <Dashboard lists={$lists} dark={$darkMode} />
-{:else if $page === REVIEW_PAGE}
-  <Review
-    dark={$darkMode}
-    current={currentWord}
-    previous={previousWord}
-    mirror={$handSideMode} />
-{/if}
+<div class={$darkMode ? 'dark' : ''}>
+  {#if $page === WELCOME_PAGE}
+    <Welcome />
+  {:else if $page === SIGN_IN_PAGE}
+    <SignIn />
+  {:else if $page === DASHBOARD_PAGE}
+    <Dashboard lists={$lists} />
+  {:else if $page === REVIEW_PAGE}
+    <Review
+      current={currentWord}
+      previous={previousWord}
+      mirror={$handSideMode} />
+  {/if}
+</div>
