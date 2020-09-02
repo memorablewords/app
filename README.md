@@ -7,9 +7,22 @@ A statically-deployed web app to enable the collaborative review of word lists.
 Development
 -----------
 
+### Components library
+
+This app is configured to use of a library of components that is maintained separately. You must make sure it is available before installing the dependencies.
+
+```sh
+# Clone the components library nex to this app (the path matters):
+git clone git@github.com:memorablewords/svelte-components.git ../svelte-components
+```
+
+Once the components library is available at `../svelte-components`, it will be installed with the rest of the dependencies.
+
+### Install the dependencies
+
 Install the dependencies…
 
-```bash
+```sh
 cd app
 npm install
 ```
