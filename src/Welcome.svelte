@@ -1,11 +1,10 @@
 <script>
   import { Icon } from "memorablewords-svelte-components";
+  import Logo from "./internal/Logo.svelte";
 </script>
 
 <style>
   section {
-    /* background-color: var(--second-color); */
-    /* color: var(--app-primary-color); */
     align-items: flex-start;
     box-sizing: border-box;
     display: flex;
@@ -20,19 +19,6 @@
     display: flex;
     justify-content: center;
     padding: 0 1rem 0 0.75rem;
-  }
-
-  h1 {
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.075em;
-    line-height: 1.4;
-    margin: 0;
-    padding: 0 0 0.125rem 2.75rem;
-    position: absolute;
-  }
-  h1 span {
-    display: block;
   }
 
   main {
@@ -81,11 +67,7 @@
 
 <section>
   <header>
-    <Icon type="memorablewords-2" size="128" />
-    <h1>
-      <span>Memorable</span>
-      <span>Words</span>
-    </h1>
+    <Logo />
   </header>
   <main>
     <p>
