@@ -16,6 +16,16 @@
     height: 100vh;
     position: relative;
   }
+
+  @media screen and (min-width: 480px) {
+    div {
+      max-width: 380px;
+      max-height: 720px;
+      margin: 16px auto;
+      border-radius: 16px;
+      border: 1px solid var(--app-primary-color);
+    }
+  }
 </style>
 
 <div class={$darkMode ? 'dark' : ''}>
