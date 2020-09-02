@@ -57,7 +57,7 @@
     {#if $user && $page === DASHBOARD_PAGE}
       <UserPreferencesToggle
         enabled={$userPreferencesOpen}
-        onclick={() => dispatch({ type: 'SHOW_USER_PREFERENCES' })} />
+        onclick={() => dispatch({ type: 'TOGGLE_USER_PREFERENCES' })} />
     {/if}
   </aside>
 </div>

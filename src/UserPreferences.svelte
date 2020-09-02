@@ -1,8 +1,9 @@
 <script>
+  import { dispatch } from "./app";
   import Icon from "./Icon.svelte";
+  import CallToActionButton from "./CallToActionButton.svelte";
 
   export let attribution = undefined;
-  export let dark = false;
 </script>
 
 <style>
@@ -15,11 +16,12 @@
     line-height: 1.5;
     color: var(--app-primary-color);
     background-color: var(--second-color);
-    margin: 6px 8px 8px;
-    border-radius: var(--app-border-radius);
+    margin: 6px 6px 8px 8px;
+    /* border-radius: var(--app-border-radius); */
     padding: var(--app-touch-target-size) 1rem 1rem;
     border: 2px solid var(--overlay-border-color);
   }
+
   .attribution {
     display: block;
     padding: 0.5rem;
@@ -50,4 +52,12 @@
     Together, we're making security more accessible to many people. Keep up the
     good work!
   </p>
+
+  <CallToActionButton
+    type="arrow-right"
+    text="Sign out"
+    title="Sign out"
+    onclick="{() => {
+      dispatch({ type: 'CLEAR_USER_DATA' });
+    }}}" />
 </aside>

@@ -4,5 +4,5 @@ export const validUser = (user) => {
 
 // isContributor checks whether there are contributions by a user.
 export const isContributor = (username) => {
-  return false;
+  return username === "gonzalo-bulnes";
 };

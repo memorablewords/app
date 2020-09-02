@@ -1,9 +1,10 @@
 <script>
   import { dispatch } from "./app";
-  import { uploadPreferencesOpen } from "./stores";
+  import { uploadPreferencesOpen, userPreferencesOpen } from "./stores";
   import Header from "./Header.svelte";
   import Lists from "./Lists.svelte";
   import UploadPreferencesToggleAlt from "./UploadPreferencesToggleAlt.svelte";
+  import UserPreferences from "./UserPreferences.svelte";
 
   export let lists = [];
 </script>

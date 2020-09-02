@@ -12,6 +12,7 @@ import {
   page,
   thanksMessageVisible,
   user,
+  userPreferencesOpen,
 } from "./stores";
 export const DECISION_YES = "yes-ncvow";
 export const DECISION_NO = "no-sebak";
@@ -44,6 +45,11 @@ function app(state, action) {
     case "TOGGLE_THANKS_MESSAGE":
       thanksMessageVisible.update((thanksMessageVisible) =>
         !thanksMessageVisible ? true : false
+      );
+      break;
+    case "TOGGLE_USER_PREFERENCES":
+      userPreferencesOpen.update((userPreferencesOpen) =>
+        !userPreferencesOpen ? true : false
       );
       break;
     case "VIEW_PAGE":

@@ -9,6 +9,7 @@
   import SignIn from "./SignIn.svelte";
   import ThanksMessage from "./ThanksMessage.svelte";
   import ThanksMessageToggle from "./ThanksMessageToggle.svelte";
+  import UserPreferences from "./UserPreferences.svelte";
   import Welcome from "./Welcome.svelte";
   import {
     user,
@@ -17,6 +18,7 @@
     handSideMode,
     thanksMessageVisible,
     contributionPresent,
+    userPreferencesOpen,
     page
   } from "./stores";
   import { dispatch, DECISION_YES, DECISION_NO, DECISION_REJECT } from "./app";
@@ -50,6 +52,13 @@
     height: 100vh;
     position: relative;
   }
+
+  .dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--overlay-color);
+  }
 </style>
 
 <div class={$darkMode ? 'dark' : ''}>
@@ -59,6 +68,11 @@
     <SignIn />
   {:else if $page === DASHBOARD_PAGE}
     <Dashboard lists={$lists} />
+    {#if $userPreferencesOpen}
+      <div class="dialog">
+        <UserPreferences />
+      </div>
+    {/if}
   {:else if $page === REVIEW_PAGE}
     <Review
       current={currentWord}

@@ -16,7 +16,7 @@
     grid-template-rows: auto auto;
     padding: 0 0 0 var(--app-padding);
     text-align: left;
-    border: 1px solid var(--muted-color);
+    border: 1px dotted var(--muted-color);
     border-width: 1px 0;
     margin-bottom: -1px;
   }

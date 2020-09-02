@@ -1,9 +1,9 @@
 :root {
   --app-primary-color: #1c1f23;
   --alternate-color: #1c1f23;
-  --overlay-color: #1c1f23c8;
+  --overlay-color: #fafbfcc8;
   --second-color: #fafbfc;
-  --overlay-border-color: var(--second-color);
+  --overlay-border-color: var(--alternate-color);
   --app-link-color: #0069d1;
   --app-padding: 8px;
   --app-touch-target-size: 48px;
@@ -17,8 +17,8 @@
   --second-color: #1c1f23;
   --alternate-color: #fafbfc;
   --app-primary-color: #fafbfc;
-  --overlay-color: var(--alternate-color);
-  --overlay-border-color: #fafbfcc8;
+  --overlay-color: #1c1f23c8;
+  --overlay-border-color: var(--alternate-color);
   --app-link-color: #2491ff;
   --muted-color: #8f8f8f;
 }
