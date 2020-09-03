@@ -11,6 +11,10 @@
   --pink-color: #dd1d80;
   --app-border-radius: 8px;
   --muted-color: #6b6b6b;
+
+  --button-padding: calc(2 * var(--app-padding));
+  --button-size: var(--app-touch-target-size);
+  --button-gap: calc(var(--app-padding) / 2);
 }
 
 .dark {

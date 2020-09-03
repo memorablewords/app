@@ -1,8 +1,17 @@
 <script>
+  import { addMessages, init } from "svelte-i18n";
   import { darkMode } from "./stores";
   import { dispatch } from "./app";
   import { onMount } from "svelte";
+  import en from "./lang/en.json";
+  import es from "./lang/es.json";
   import Welcome from "./Welcome.svelte";
+
+  addMessages("en", en);
+  addMessages("es", es);
+  init({
+    initialLocale: "en"
+  });
 
   onMount(() => {
     dispatch({ type: "INIT" });

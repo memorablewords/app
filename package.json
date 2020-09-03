@@ -10,6 +10,7 @@
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.8.3",
     "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
     "jest": "^26.2.2",
     "memorablewords-svelte-components": "file:../svelte-components",
@@ -20,7 +21,8 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.0"
+    "sirv-cli": "^1.0.0",
+    "svelte-i18n": "^3.0.4"
   },
   "babel": {
     "env": {

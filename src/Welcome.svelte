@@ -1,5 +1,8 @@
 <script>
-  import { Icon, Text } from "memorablewords-svelte-components";
+  import { _ } from "svelte-i18n";
+  import { dispatch } from "./app";
+  import { Button, Icon, Text } from "memorablewords-svelte-components";
+  import { preferredLocale } from "./stores";
   import Logo from "./internal/Logo.svelte";
 </script>
 
@@ -17,6 +20,10 @@
     display: flex;
     justify-content: start;
     padding: 0 1.5rem;
+  }
+
+  .preferences {
+    margin-left: auto;
   }
 
   main {
@@ -52,20 +59,42 @@
 <section>
   <header>
     <Logo />
+    <div class="preferences">
+      {#if $preferredLocale === 'en'}
+        <Button
+          title={$_('locale_button_es_title')}
+          onclick={() => dispatch({ type: 'SET_LOCALE', value: 'es' })}
+          relaxed>
+          <Text>{$_('locale_button_es_text')}</Text>
+          <Icon size={16} type="globe" />
+        </Button>
+      {:else}
+        <Button
+          title={$_('locale_button_en_title')}
+          onclick={() => dispatch({ type: 'SET_LOCALE', value: 'en' })}
+          relaxed>
+          <Text>{$_('locale_button_en_text')}</Text>
+          <Icon size={16} type="globe" />
+        </Button>
+      {/if}
+    </div>
   </header>
   <main>
     <Text element="p">
-      Identifying memorable words in your language makes strong passphrases more
-      accessible to more people.
+      {@html $_('purpose_statement')}
     </Text>
     <div class="strong">
-      <Text element="p">Coming soon…</Text>
+      <Text element="p">
+        {@html $_('teaser')}
+      </Text>
     </div>
   </main>
 
   <footer>
     <Text>
-      <small>A contribution to the public knowledge.</small>
+      <small>
+        {@html $_('purpose_reminder')}
+      </small>
     </Text>
   </footer>
 </section>
