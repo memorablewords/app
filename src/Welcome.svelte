@@ -1,7 +1,7 @@
 <script>
   import { _ } from "svelte-i18n";
   import { dispatch } from "./app";
-  import { Text } from "memorablewords-svelte-components";
+  import { Icon, Text } from "memorablewords-svelte-components";
   import { preferredLocale } from "./stores";
   import Logo from "./internal/Logo.svelte";
 </script>
@@ -77,6 +77,7 @@
       {:else}
         <Text>EN</Text>
       {/if}
+      <Icon size={16} type="globe" />
     </button>
   </header>
   <main>
