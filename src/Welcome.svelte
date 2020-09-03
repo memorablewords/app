@@ -5,20 +5,18 @@
 
 <style>
   section {
-    align-items: flex-start;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: start;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100%;
     padding: var(--app-padding);
   }
 
   header {
     align-items: center;
     display: flex;
-    justify-content: center;
-    padding: 0 1rem 0 0.75rem;
+    justify-content: start;
+    padding: 0 1.5rem;
   }
 
   main {
