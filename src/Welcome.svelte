@@ -1,7 +1,7 @@
 <script>
   import { _ } from "svelte-i18n";
   import { dispatch } from "./app";
-  import { Icon, Text } from "memorablewords-svelte-components";
+  import { Button, Icon, Text } from "memorablewords-svelte-components";
   import { preferredLocale } from "./stores";
   import Logo from "./internal/Logo.svelte";
 </script>
@@ -20,6 +20,10 @@
     display: flex;
     justify-content: start;
     padding: 0 1.5rem;
+  }
+
+  .preferences {
+    margin-left: auto;
   }
 
   main {
@@ -50,37 +54,30 @@
     align-items: center;
     justify-content: center;
   }
-
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    height: 48px;
-    margin: 0 0 0 auto;
-    padding: 16px;
-    box-sizing: border-box;
-  }
 </style>
 
 <section>
   <header>
     <Logo />
-    {#if $preferredLocale === 'en'}
-      <button
-        type="button"
-        on:click={() => dispatch({ type: 'SET_LOCALE', value: 'es' })}>
-        <Text>ES</Text>
-        <Icon size={16} type="globe" />
-      </button>
-    {:else}
-      <button
-        type="button"
-        on:click={() => dispatch({ type: 'SET_LOCALE', value: 'en' })}>
-        <Text>EN</Text>
-        <Icon size={16} type="globe" />
-      </button>
-    {/if}
+    <div class="preferences">
+      {#if $preferredLocale === 'en'}
+        <Button
+          title={$_('locale_button_es_title')}
+          onclick={() => dispatch({ type: 'SET_LOCALE', value: 'es' })}
+          relaxed>
+          <Text>{$_('locale_button_es_text')}</Text>
+          <Icon size={16} type="globe" />
+        </Button>
+      {:else}
+        <Button
+          title={$_('locale_button_en_title')}
+          onclick={() => dispatch({ type: 'SET_LOCALE', value: 'en' })}
+          relaxed>
+          <Text>{$_('locale_button_en_text')}</Text>
+          <Icon size={16} type="globe" />
+        </Button>
+      {/if}
+    </div>
   </header>
   <main>
     <Text element="p">

@@ -1,5 +1,9 @@
 {
+  "locale_button_en_text": "EN",
+  "locale_button_en_title": "Read in English",
+  "locale_button_es_text": "ES",
+  "locale_button_es_title": "Read in Spanish",
+  "purpose_reminder": "A contribution to the public knowledge.",
   "purpose_statement": "Identifying memorable words in your language makes strong passphrases more accessible to more&nbsp;people.",
-  "teaser": "Coming soon…",
-  "purpose_reminder": "A contribution to the public knowledge."
+  "teaser": "Coming soon…"
 }
