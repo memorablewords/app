@@ -1,4 +1,5 @@
 export const DARK_MODE_KEY = "darkMode-lduwe";
+export const PREFERRED_LOCALE_KEY = "preferredLocale-owjfu";
 
 export function storeDarkMode(mode) {
   localStorage.setItem(DARK_MODE_KEY, mode);
@@ -6,6 +7,15 @@ export function storeDarkMode(mode) {
 
 export function getDarkModeFromStorage() {
   return localStorage.getItem(DARK_MODE_KEY) === "true";
+}
+
+export function storePreferredLocale(mode) {
+  localStorage.setItem(PREFERRED_LOCALE_KEY, mode);
+}
+
+export function getPreferredLocaleFromStorage() {
+  let locale = localStorage.getItem(PREFERRED_LOCALE_KEY);
+  return locale && locale !== "" ? locale : "en";
 }
 
 /* storageAvailable detects whether localStorage is both supported and available.
