@@ -24,12 +24,11 @@ function app(action) {
       storePreferredLocale(action.value);
       break;
     default:
-      console.log("Unknown action type:", action.type);
+      console.debug("Unknown action type:", action.type);
   }
 }
 
 export function dispatch(action) {
-  console.log("-------");
-  console.log("type:", action.type, "value:", action.value);
+  console.debug("Action type:", action.type, "value:", action.value);
   app(action);
 }
