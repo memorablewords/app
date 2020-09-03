@@ -7,6 +7,8 @@
     --lateral-offset: 10px;
     align-items: center;
     display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI,
+      Roboto, Helvetica Neue, sans-serif;
     justify-content: center;
     padding: 0 var(--lateral-offset) 0 0;
     position: relative;
