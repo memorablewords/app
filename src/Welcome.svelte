@@ -66,19 +66,21 @@
 <section>
   <header>
     <Logo />
-    <button
-      type="button"
-      on:click={() => dispatch({
-          type: 'SET_LOCALE',
-          value: $preferredLocale === 'en' ? 'es' : 'en'
-        })}>
-      {#if $preferredLocale === 'en'}
+    {#if $preferredLocale === 'en'}
+      <button
+        type="button"
+        on:click={() => dispatch({ type: 'SET_LOCALE', value: 'es' })}>
         <Text>ES</Text>
-      {:else}
+        <Icon size={16} type="globe" />
+      </button>
+    {:else}
+      <button
+        type="button"
+        on:click={() => dispatch({ type: 'SET_LOCALE', value: 'en' })}>
         <Text>EN</Text>
-      {/if}
-      <Icon size={16} type="globe" />
-    </button>
+        <Icon size={16} type="globe" />
+      </button>
+    {/if}
   </header>
   <main>
     <Text element="p">
