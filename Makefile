@@ -16,7 +16,7 @@ clean: ## Remove all build artifacts
 
 .PHONY: deploy
 deploy: ## Deploy latest release
-	surge public https://memorablewords.surge.sh
+	surge public https://app.memorablewords.org
 
 .PHONY: release
 release: CURRENT_RELEASE = $$((${RELEASE} + 1))
