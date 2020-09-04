@@ -1,6 +1,6 @@
 <script>
   import { addMessages, init } from "svelte-i18n";
-  import { darkMode, page } from "./stores";
+  import { darkMode, page, user } from "./stores";
   import { dispatch } from "./app";
   import { onMount } from "svelte";
   import { GUIDELINES_PAGE, SIGN_IN_PAGE } from "./pages";
@@ -44,7 +44,7 @@
 <div class={$darkMode ? 'dark' : ''}>
   {#if $page === SIGN_IN_PAGE}
     <SignIn />
-  {:else if $page === GUIDELINES_PAGE}
+  {:else if $user && $page === GUIDELINES_PAGE}
     <Guidelines />
   {:else}
     <Welcome />
