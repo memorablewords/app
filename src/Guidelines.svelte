@@ -43,7 +43,9 @@
 <section>
   <header />
   <main>
-    <Text element="p">{$_('guidelines_placeholder')}</Text>
+    <Text element="p">
+      {@html $_('guidelines_placeholder')}
+    </Text>
   </main>
 
   <footer>
