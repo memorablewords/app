@@ -5,7 +5,7 @@ import {
   storageAvailable,
   storePreferredLocale,
 } from "./storage";
-import { darkMode, preferredLocale } from "./stores";
+import { darkMode, page, preferredLocale } from "./stores";
 
 function app(action) {
   switch (action.type) {
@@ -23,8 +23,11 @@ function app(action) {
       preferredLocale.update(() => action.value);
       storePreferredLocale(action.value);
       break;
+    case "VIEW_PAGE":
+      page.update(() => action.value);
+      break;
     default:
-      console.debug("Unknown action type:", action.type);
+      console.debug("🔮 Unknown action type:", action.type);
   }
 }
 
