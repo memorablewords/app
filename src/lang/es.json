@@ -1,9 +1,21 @@
 {
+  "guidelines_placeholder": "Esta es una página temporal. Ha iniciado sesión exitosamente, pero por ahora eso es todo lo que puede hacer. Vuelva a probar en unos&nbsp;días!",
   "locale_button_en_text": "Inglés",
   "locale_button_en_title": "Leer en inglés",
   "locale_button_es_text": "Español",
   "locale_button_es_title": "Leer en español (castellano)",
   "purpose_reminder": "Una contribución al conocimiento público.",
-  "purpose_statement": "Identificar palabras fáciles de recordar en tu idioma hace más accesible el uso de contraseñas fuertes para más&nbsp;personas.",
-  "teaser": "Pronto disponible…"
+  "purpose_statement": "Identificar palabras fáciles de recordar en su idioma hace más accesible el uso de contraseñas fuertes para más&nbsp;personas.",
+  "signin_button_text": "Iniciar sesión",
+  "signin_button_title": "Seguir",
+  "signin_form_attribution_hint": "Sus contribuciones serán atribuidas con este nombre en el sitio web de Memorable&nbsp;Words.",
+  "signin_form_attribution_label": "Nombre preferido para atribución",
+  "signin_form_attribution_placeholder": "Gonzalo Bulnes Guilpain",
+  "signin_form_username_hint": "Su nombre de usuario le permitirá llevar la cuenta de sus contribuciones a través del&nbsp;tiempo.",
+  "signin_form_username_label": "Nombre de usuario <small>(requerido)</small>",
+  "signin_form_username_placeholder": "gonzalo-bulnes",
+  "signout_button_text": "Cerrar sesión",
+  "signout_button_title": "Eliminar datos privados",
+  "start_button_text": "Empezar",
+  "start_button_title": "Seguir"
 }
