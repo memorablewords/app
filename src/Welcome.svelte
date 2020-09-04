@@ -66,8 +66,6 @@
           onclick={() => dispatch({ type: 'SET_LOCALE', value: 'es' })}
           relaxed>
           <Text>{$_('locale_button_es_text')}</Text>
-          <Spacer />
-          <Icon size={16} type="globe" />
         </Button>
       {:else}
         <Button
@@ -75,8 +73,6 @@
           onclick={() => dispatch({ type: 'SET_LOCALE', value: 'en' })}
           relaxed>
           <Text>{$_('locale_button_en_text')}</Text>
-          <Spacer />
-          <Icon size={16} type="globe" />
         </Button>
       {/if}
     </div>
