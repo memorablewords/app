@@ -70,3 +70,35 @@ git push origin main
   [sirv]: https://github.com/lukeed/sirv
   [surge]: https://surge.sh
   [svelte]: https://svelte.dev
+
+Credits
+-------
+
+Most of the project icons are [Feather](https://feathericons.com/) icons, created by [@colebemis](https://github.com/colebemis) and published under the MIT License. The other icons are inspired by them!
+
+The application code also depends on several projects from the Svelte ecosystem, in particular [`svelte-i18n`](https://github.com/kaisermann/svelte-i18n) and [@ashour](https://github.com/ashour) accompanying [blog post](https://phrase.com/blog/posts/a-step-by-step-guide-to-svelte-localization-with-svelte-i18n-v3/) made my day.
+
+The design owes to Amanda Sepúlveda Brajovic, as does the management of the project.
+
+Here and there, credits are given in the code, huge thanks to everyone!
+
+License
+-------
+
+```
+Memorable Words App
+Copyright (C) 2020 Gonzalo Bulnes Guilpain
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+```
