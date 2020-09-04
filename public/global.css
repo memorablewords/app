@@ -15,6 +15,7 @@
   --button-padding: calc(2 * var(--app-padding));
   --button-size: var(--app-touch-target-size);
   --button-gap: calc(var(--app-padding) / 2);
+  --spacer-size: var(--button-gap);
 }
 
 .dark {
