@@ -115,7 +115,7 @@
   <footer>
     <Text>
       <small>
-        {@html $_('purpose_reminder')}
+        {@html $_('made_by')}
       </small>
     </Text>
   </footer>
