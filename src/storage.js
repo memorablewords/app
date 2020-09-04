@@ -1,5 +1,11 @@
+export const ATTRIBUTION_KEY = "attribution-9432d";
 export const DARK_MODE_KEY = "darkMode-lduwe";
 export const PREFERRED_LOCALE_KEY = "preferredLocale-owjfu";
+export const USERNAME_KEY = "username-she3e";
+
+export function clear() {
+  localStorage.clear();
+}
 
 export function storeDarkMode(mode) {
   localStorage.setItem(DARK_MODE_KEY, mode);
@@ -16,6 +22,29 @@ export function storePreferredLocale(mode) {
 export function getPreferredLocaleFromStorage() {
   let locale = localStorage.getItem(PREFERRED_LOCALE_KEY);
   return locale && locale !== "" ? locale : "en";
+}
+
+export function storeUser(user) {
+  localStorage.setItem(USERNAME_KEY, user.username);
+  localStorage.setItem(ATTRIBUTION_KEY, user.attribution);
+}
+
+export function getUserFromStorage() {
+  let username = sanitize(localStorage.getItem(USERNAME_KEY));
+  if (username === "") {
+    return undefined;
+  }
+  return {
+    username: username,
+    attribution: sanitize(localStorage.getItem(ATTRIBUTION_KEY)),
+  };
+}
+
+function sanitize(value) {
+  if (!value || value === "null") {
+    return "";
+  }
+  return value;
 }
 
 /* storageAvailable detects whether localStorage is both supported and available.
