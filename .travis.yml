@@ -1,0 +1,9 @@
+language: node_js
+before_install:
+  -  # Clone the components library nex to this app (the path matters):
+  - git clone https://github.com/memorablewords/svelte-components.git ../svelte-components
+node_js:
+  - "10"
+  - "12"
+script:
+  - npm test
