@@ -1,9 +1,24 @@
 {
+  "guidelines_placeholder": "This is a placeholder page. You are successfully signed in, but that's all you can do for now. Please check again in a few&nbsp;days!",
   "locale_button_en_text": "English",
   "locale_button_en_title": "Read in English",
   "locale_button_es_text": "Spanish",
   "locale_button_es_title": "Read in Spanish",
-  "purpose_reminder": "A contribution to the public knowledge.",
+  "made_by": "made&nbsp;with&nbsp;♥️&nbsp;by&nbsp;<a href=\"https://github.com/memorablewords\">@gonzalo-bulnes</a>",
+  "purpose_reminder": "A contribution to the public&nbsp;knowledge.",
   "purpose_statement": "Identifying memorable words in your language makes strong passphrases more accessible to more&nbsp;people.",
-  "teaser": "Coming soon…"
+  "signin_button_text": "Sign in",
+  "signin_button_text_already_signed_in": "Continue",
+  "signin_button_title": "Continue",
+  "signin_button_title_already_signed_in": "Continue",
+  "signin_form_attribution_hint": "This is how your contributions will be attributed to you in the Memorable&nbsp;Words website.",
+  "signin_form_attribution_label": "Preferred attribution",
+  "signin_form_attribution_placeholder": "Gonzalo Bulnes Guilpain",
+  "signin_form_username_hint": "Your username will allow you to keep track of your contributions over&nbsp;time.",
+  "signin_form_username_label": "Username <small>(required)</small>",
+  "signin_form_username_placeholder": "gonzalo-bulnes",
+  "signout_button_text": "Sign out",
+  "signout_button_title": "Clear all private data",
+  "start_button_text": "Get started",
+  "start_button_title": "Continue"
 }
