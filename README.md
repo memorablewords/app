@@ -1,6 +1,8 @@
 Memorable Words App
 ===================
 
+[![Build Status](https://www.travis-ci.org/memorablewords/app.svg?branch=main)](https://www.travis-ci.org/memorablewords/app)
+
 A statically-deployed web app to enable the collaborative review of word lists.
 
 
