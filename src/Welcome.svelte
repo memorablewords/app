@@ -1,8 +1,9 @@
 <script>
   import { _ } from "svelte-i18n";
-  import { dispatch } from "./app";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
+  import { dispatch } from "./app";
   import { preferredLocale } from "./stores";
+  import { SIGN_IN_PAGE } from "./pages";
   import Logo from "./internal/Logo.svelte";
 </script>
 
@@ -45,15 +46,6 @@
   footer small {
     font-style: oblique;
   }
-
-  .strong {
-    border: 1px solid var(--app-primary-color);
-    padding: 0 1rem;
-    height: var(--app-touch-target-size);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 </style>
 
 <section>
@@ -81,11 +73,12 @@
     <Text element="p">
       {@html $_('purpose_statement')}
     </Text>
-    <div class="strong">
-      <Text element="p">
-        {@html $_('teaser')}
-      </Text>
-    </div>
+    <Button
+      title={$_('start_button_title')}
+      onclick={() => dispatch({ type: 'VIEW_PAGE', value: SIGN_IN_PAGE })}
+      relaxed>
+      <Text>{$_('start_button_text')}</Text>
+    </Button>
   </main>
 
   <footer>

@@ -1,6 +1,7 @@
 <script>
   import { _ } from "svelte-i18n";
-  import { Text } from "memorablewords-svelte-components";
+  import { Button, Text } from "memorablewords-svelte-components";
+  import { dispatch } from "./app";
 </script>
 
 <style>
@@ -46,6 +47,14 @@
     <Text element="p">
       {@html $_('guidelines_placeholder')}
     </Text>
+    <Button
+      title={$_('signout_button_title')}
+      onclick={() => {
+        dispatch({ type: 'UNSET_USER' });
+      }}
+      relaxed>
+      <Text>{$_('signout_button_text')}</Text>
+    </Button>
   </main>
 
   <footer>

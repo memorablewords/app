@@ -1,10 +1,13 @@
 <script>
   import { addMessages, init } from "svelte-i18n";
-  import { darkMode } from "./stores";
+  import { darkMode, page } from "./stores";
   import { dispatch } from "./app";
   import { onMount } from "svelte";
+  import { GUIDELINES_PAGE, SIGN_IN_PAGE } from "./pages";
   import en from "./lang/en.json";
   import es from "./lang/es.json";
+  import SignIn from "./SignIn.svelte";
+  import Guidelines from "./Guidelines.svelte";
   import Welcome from "./Welcome.svelte";
 
   addMessages("en", en);
@@ -33,10 +36,17 @@
       margin: 16px auto;
       border-radius: 16px;
       border: 1px solid var(--app-primary-color);
+      overflow: scroll;
     }
   }
 </style>
 
 <div class={$darkMode ? 'dark' : ''}>
-  <Welcome />
+  {#if $page === SIGN_IN_PAGE}
+    <SignIn />
+  {:else if $page === GUIDELINES_PAGE}
+    <Guidelines />
+  {:else}
+    <Welcome />
+  {/if}
 </div>
