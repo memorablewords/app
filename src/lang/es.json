@@ -7,7 +7,9 @@
   "purpose_reminder": "Una contribución al conocimiento público.",
   "purpose_statement": "Identificar palabras fáciles de recordar en su idioma hace más accesible el uso de contraseñas fuertes para más&nbsp;personas.",
   "signin_button_text": "Iniciar sesión",
-  "signin_button_title": "Seguir",
+  "signin_button_text_already_signed_in": "Continuar",
+  "signin_button_title": "Continuar",
+  "signin_button_title_already_signed_in": "Continuar",
   "signin_form_attribution_hint": "Sus contribuciones serán atribuidas con este nombre en el sitio web de Memorable&nbsp;Words.",
   "signin_form_attribution_label": "Nombre preferido para atribución",
   "signin_form_attribution_placeholder": "Gonzalo Bulnes Guilpain",
@@ -17,5 +19,5 @@
   "signout_button_text": "Cerrar sesión",
   "signout_button_title": "Eliminar datos privados",
   "start_button_text": "Empezar",
-  "start_button_title": "Seguir"
+  "start_button_title": "Continuar"
 }

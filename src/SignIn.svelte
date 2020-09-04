@@ -27,6 +27,15 @@
     attribution = event.target.value;
     customAttribution = true;
   };
+
+  $: buttonText =
+    $user && $user.username === currentUser.username
+      ? $_("signin_button_text_already_signed_in")
+      : $_("signin_button_text");
+  $: buttonTitle =
+    $user && $user.username === currentUser.username
+      ? $_("signin_button_title_already_signed_in")
+      : $_("signin_button_title");
 </script>
 
 <style>
@@ -89,7 +98,7 @@
 
       <Button
         type="submit"
-        title={$_('signin_button_title')}
+        title={buttonTitle}
         onclick={() => {
           if (valid) {
             dispatch({ type: 'SET_USER', value: currentUser });
@@ -98,7 +107,7 @@
         }}
         disabled={!valid}
         relaxed>
-        <Text>{$_('signin_button_text')}</Text>
+        <Text>{buttonText}</Text>
       </Button>
     </form>
   </main>
