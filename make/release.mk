@@ -1,1 +1,1 @@
-RELEASE = 7
+RELEASE = 8
