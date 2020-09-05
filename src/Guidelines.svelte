@@ -1,7 +1,7 @@
 <script>
   import { _ } from "svelte-i18n";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
-  import { darkMode } from "./stores";
+  import { darkMode, user, userPreferencesOpen } from "./stores";
   import { dispatch } from "./app";
   import { WELCOME_PAGE } from "./pages";
 </script>
@@ -19,6 +19,10 @@
     align-items: center;
     display: flex;
     justify-content: start;
+  }
+
+  .push {
+    margin-left: auto;
   }
 
   main {
@@ -71,6 +75,28 @@
         }}>
         <Icon type="moon" size={24} />
       </Button>
+    {/if}
+
+    {#if $user}
+      <div class="push">
+        {#if $userPreferencesOpen}
+          <Button
+            title={$_('user_preferences_toggle_button_open_title')}
+            onclick={() => {
+              dispatch({ type: 'TOGGLE_USER_PREFERENCES' });
+            }}>
+            <Icon type="user-full" size={24} />
+          </Button>
+        {:else}
+          <Button
+            title={$_('user_preferences_toggle_button_closed_title')}
+            onclick={() => {
+              dispatch({ type: 'TOGGLE_USER_PREFERENCES' });
+            }}>
+            <Icon type="user" size={24} />
+          </Button>
+        {/if}
+      </div>
     {/if}
   </header>
 

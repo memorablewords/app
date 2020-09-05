@@ -23,5 +23,7 @@
   "signout_button_text": "Cerrar sesión",
   "signout_button_title": "Eliminar datos privados",
   "start_button_text": "Empezar",
-  "start_button_title": "Continuar"
+  "start_button_title": "Continuar",
+  "user_preferences_toggle_button_closed_title": "Abrir preferencias de usuario",
+  "user_preferences_toggle_button_open_title": "Cerrar preferencias de usuario"
 }

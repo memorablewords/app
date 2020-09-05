@@ -10,10 +10,19 @@ import {
   storePreferredLocale,
   storeUser,
 } from "./storage";
-import { darkMode, page, preferredLocale, user } from "./stores";
+import {
+  darkMode,
+  page,
+  preferredLocale,
+  user,
+  userPreferencesOpen,
+} from "./stores";
 
 function app(action) {
   switch (action.type) {
+    case "CLOSE_USER_PREFERENCES":
+      userPreferencesOpen.update(() => false);
+      break;
     case "INIT":
       if (storageAvailable("localStorage")) {
         user.update(() => getUserFromStorage());
@@ -37,12 +46,20 @@ function app(action) {
       darkMode.update((dark) => (!dark ? true : false));
       storeDarkMode(get(darkMode));
       break;
+    case "TOGGLE_USER_PREFERENCES":
+      userPreferencesOpen.update((userPreferencesOpen) =>
+        !userPreferencesOpen ? true : false
+      );
+      break;
     case "UNSET_USER":
       user.update(() => undefined);
       clear();
       break;
     case "VIEW_PAGE":
       page.update(() => action.value);
+      dispatch({
+        type: "CLOSE_USER_PREFERENCES",
+      });
       break;
     default:
       console.debug("🔮 Unknown action type:", action.type);
