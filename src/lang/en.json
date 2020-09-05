@@ -1,5 +1,8 @@
 {
+  "dark_mode_toggle_button_dark_title": "Enable light mode",
+  "dark_mode_toggle_button_light_title": "Enable dark mode",
   "guidelines_placeholder": "This is a placeholder page. You are successfully signed in, but that's all you can do for now. Please check again in a few&nbsp;days!",
+  "home_button_title": "Go to home page",
   "locale_button_en_text": "English",
   "locale_button_en_title": "Read in English",
   "locale_button_es_text": "Spanish",
@@ -20,5 +23,7 @@
   "signout_button_text": "Sign out",
   "signout_button_title": "Clear all private data",
   "start_button_text": "Get started",
-  "start_button_title": "Continue"
+  "start_button_title": "Continue",
+  "user_preferences_toggle_button_closed_title": "Open user preferences",
+  "user_preferences_toggle_button_open_title": "Close user preferences"
 }
