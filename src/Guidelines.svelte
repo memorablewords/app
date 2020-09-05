@@ -139,134 +139,86 @@
   <main>
     <Text stacked element="h2" display="header">Guidelines</Text>
 
-    <Text stacked element="h2" display="header">Review outcomes</Text>
-
-    <Text stacked element="p">
-      The goal of the review is to identify what words are
-      <strong>most suitable for creating memorable passphrases</strong>
-      .
+    <Text stacked element="h2" display="header">
+      {@html $_('guidelines_review_outcomes_0_title')}
     </Text>
     <Text stacked element="p">
-      Please note that what is
-      <em>suitable</em>
-      is a matter of personal judgement, and there are no right or wrong
-      answers. You should say what
-      <em>you</em>
-      think of each word you review.
+      {@html $_('guidelines_review_outcomes_1')}
     </Text>
-
+    <Text stacked element="p">
+      {@html $_('guidelines_review_outcomes_2')}
+    </Text>
     <ul>
       <li>
         <Text stacked>
-          Select
-          <strong>Yes</strong>
-          when you think the word is appropriate.
+          {@html $_('guidelines_review_outcomes_3')}
         </Text>
       </li>
-    </ul>
-    <ul>
       <li>
         <Text stacked>
-          Select
-          <strong>No</strong>
-          when you would prefer not using that word.
+          {@html $_('guidelines_review_outcomes_4')}
         </Text>
       </li>
-    </ul>
-    <ul>
       <li>
         <Text stacked>
-          Select
-          <strong>Reject</strong>
-          when the word doesn't belong to the category that you're reviewing or
-          is otherwise incorrect.
+          {@html $_('guidelines_review_outcomes_5')}
         </Text>
       </li>
     </ul>
 
-    <Text stacked element="h2" display="header">When in doubt…</Text>
-    <Text stacked element="p">
-      Say
-      <strong>No</strong>
-      .
+    <Text stacked element="h2" display="header">
+      {@html $_('guidelines_when_in_doubt_0_title')}
     </Text>
     <Text stacked element="p">
-      A total of 7776 words is necessary to compose the longest word list. Not
-      all existing words need to be reviewed, suffice to find 7776 that are
-      appropriate.
+      {@html $_('guidelines_when_in_doubt_1')}
     </Text>
     <Text stacked element="p">
-      You are also not alone reviewing and the review process will be composed
-      of multiple rounds. Once we know how many words were found suitable by
-      their reviewers, we can take a second look at the words you said
-      <strong>No</strong>
-      to.
+      {@html $_('guidelines_when_in_doubt_2')}
+    </Text>
+    <Text stacked element="p">
+      {@html $_('guidelines_when_in_doubt_3')}
     </Text>
 
     <Text stacked element="h2" display="header">
-      How were the words selected?
+      {@html $_('guidelines_words_selection_0_title')}
     </Text>
     <Text stacked element="p">
-      The words come from the
-      <em>Corpus del Español del Siglo XXI</em>
-      (CORPES) that is published by the Royal Spanish Academy.
+      {@html $_('guidelines_words_selection_1')}
     </Text>
     <Text stacked element="p">
-      The review lists were created selecting the most frequently used words in
-      different categories (nouns, verbs, adjectives) among those that don't
-      contain any diacritic marks (accents, tilda).
+      {@html $_('guidelines_words_selection_2')}
     </Text>
 
     <Text stacked element="h2" display="header">
-      What happens after I reviewed a list?
+      {@html $_('guidelines_review_process_0_title')}
     </Text>
     <Text stacked element="p">
-      All your reviews are stored on your web browser until you sign out, and no
-      information leaves your browser until you decide so.
+      {@html $_('guidelines_review_process_1')}
     </Text>
     <Text stacked element="p">
-      In order to save your reviews and contribute them to the project you need
-      to download them to your device and send the file attached to an email to
-      <a href="mailto:contributions@memorablewords.org">
-        contributions@memorablewords.org
-      </a>
-      .
+      {@html $_('guidelines_review_process_2')}
     </Text>
 
     <Text stacked element="h2" display="header">
-      How can I know if my reviews have been saved?
+      {@html $_('guidelines_progress_tracking_0_title')}
     </Text>
     <Text stacked element="p">
-      Each list in your dashboard displays the number of words you've reviewed,
-      as well as the status of those reviews.
+      {@html $_('guidelines_progress_tracking_1')}
     </Text>
     <ul>
       <li>
         <Text stacked>
-          <strong>Pending</strong>
-          reviews are stored on your browser, but you haven't saved them to your
-          device yet. Those would be lost if you were to sign out.
+          {@html $_('guidelines_progress_tracking_2')}
         </Text>
       </li>
       <li>
         <Text stacked>
-          <strong>Saved</strong>
-          reviews are stored in your browser, and you saved them by generating a
-          file that your downloaded to your device. We recommend you email them
-          immediately to
-          <a href="mailto:contributions@memorablewords.org">
-            contributions@memorablewords.org
-          </a>
-          when you save reviews.
+          {@html $_('guidelines_progress_tracking_3')}
         </Text>
       </li>
       <li>
         <Text stacked>
-          <strong>Accepted</strong>
-          reviews are those you sent as a contribution to Memorable Words and
-          were integrated to the common knowledge after the contribution was
-          accepted. Thank you!! You can send more at any time, your
-          contributions make a difference.
+          {@html $_('guidelines_progress_tracking_4')}
         </Text>
       </li>
     </ul>
