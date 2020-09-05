@@ -86,7 +86,7 @@
       <Icon type="memorablewords" size={24} />
       <Spacer />
       <div class="logo">
-        <Text>Memorable&nbsp;Words</Text>
+        <Text element="h1">Memorable&nbsp;Words</Text>
       </div>
     </Button>
     {#if $darkMode}
