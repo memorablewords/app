@@ -3,7 +3,7 @@
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
   import { darkMode, user, userPreferencesOpen } from "./stores";
   import { dispatch } from "./app";
-  import { DASHBOARD_PAGE, WELCOME_PAGE } from "./pages";
+  import { GUIDELINES_PAGE, WELCOME_PAGE } from "./pages";
 
   $: hidden = !$userPreferencesOpen;
 </script>
@@ -15,8 +15,6 @@
     grid-template-rows: auto 1fr auto;
     min-height: 100%;
     padding: var(--app-padding);
-    background-color: var(--second-color);
-    color: var(--app-primary-color);
   }
 
   header {
@@ -35,20 +33,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     padding: calc(3 * var(--app-padding));
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-  }
-
-  .next {
-    padding: 32px 0;
   }
 
   footer {
@@ -137,102 +121,9 @@
   </header>
 
   <main>
-    <Text stacked element="h2" display="header">Guidelines</Text>
-
-    <Text stacked element="h2" display="header">
-      {@html $_('guidelines_review_outcomes_0_title')}
+    <Text element="p">
+      {@html $_('dashboard_empty_state')}
     </Text>
-    <Text stacked element="p">
-      {@html $_('guidelines_review_outcomes_1')}
-    </Text>
-    <Text stacked element="p">
-      {@html $_('guidelines_review_outcomes_2')}
-    </Text>
-    <ul>
-      <li>
-        <Text stacked>
-          {@html $_('guidelines_review_outcomes_3')}
-        </Text>
-      </li>
-      <li>
-        <Text stacked>
-          {@html $_('guidelines_review_outcomes_4')}
-        </Text>
-      </li>
-      <li>
-        <Text stacked>
-          {@html $_('guidelines_review_outcomes_5')}
-        </Text>
-      </li>
-    </ul>
-
-    <Text stacked element="h2" display="header">
-      {@html $_('guidelines_when_in_doubt_0_title')}
-    </Text>
-    <Text stacked element="p">
-      {@html $_('guidelines_when_in_doubt_1')}
-    </Text>
-    <Text stacked element="p">
-      {@html $_('guidelines_when_in_doubt_2')}
-    </Text>
-    <Text stacked element="p">
-      {@html $_('guidelines_when_in_doubt_3')}
-    </Text>
-
-    <Text stacked element="h2" display="header">
-      {@html $_('guidelines_words_selection_0_title')}
-    </Text>
-    <Text stacked element="p">
-      {@html $_('guidelines_words_selection_1')}
-    </Text>
-    <Text stacked element="p">
-      {@html $_('guidelines_words_selection_2')}
-    </Text>
-
-    <Text stacked element="h2" display="header">
-      {@html $_('guidelines_review_process_0_title')}
-    </Text>
-    <Text stacked element="p">
-      {@html $_('guidelines_review_process_1')}
-    </Text>
-    <Text stacked element="p">
-      {@html $_('guidelines_review_process_2')}
-    </Text>
-
-    <Text stacked element="h2" display="header">
-      {@html $_('guidelines_progress_tracking_0_title')}
-    </Text>
-    <Text stacked element="p">
-      {@html $_('guidelines_progress_tracking_1')}
-    </Text>
-    <ul>
-      <li>
-        <Text stacked>
-          {@html $_('guidelines_progress_tracking_2')}
-        </Text>
-      </li>
-      <li>
-        <Text stacked>
-          {@html $_('guidelines_progress_tracking_3')}
-        </Text>
-      </li>
-      <li>
-        <Text stacked>
-          {@html $_('guidelines_progress_tracking_4')}
-        </Text>
-      </li>
-    </ul>
-
-    <div class="push next">
-      <Button
-        title={$_('acknowledge_guidelines_button_title')}
-        onclick={() => {
-          dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE });
-        }}
-        relaxed>
-        <Text>{$_('acknowledge_guidelines_button_text')}</Text>
-      </Button>
-    </div>
   </main>
 
   <footer>
