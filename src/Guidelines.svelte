@@ -121,7 +121,7 @@
             onclick={() => {
               dispatch({ type: 'TOGGLE_USER_PREFERENCES' });
             }}>
-            <Icon type="user-full" size={24} />
+            <Icon type="x" size={24} />
           </Button>
         {:else}
           <Button
