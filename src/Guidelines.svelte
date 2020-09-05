@@ -4,6 +4,8 @@
   import { darkMode, user, userPreferencesOpen } from "./stores";
   import { dispatch } from "./app";
   import { WELCOME_PAGE } from "./pages";
+
+  $: hidden = !$userPreferencesOpen;
 </script>
 
 <style>
@@ -44,6 +46,25 @@
   footer small {
     font-style: oblique;
   }
+
+  .hidden {
+    display: none;
+  }
+
+  .raise {
+    z-index: 1;
+  }
+
+  aside {
+    align-items: center;
+    background-color: var(--second-color);
+    box-sizing: border-box;
+    display: flex;
+    height: calc(100% - calc(2 * var(--app-padding)));
+    justify-content: center;
+    position: absolute;
+    width: calc(100% - calc(2 * var(--app-padding)));
+  }
 </style>
 
 <section>
@@ -78,7 +99,7 @@
     {/if}
 
     {#if $user}
-      <div class="push">
+      <div class="push raise">
         {#if $userPreferencesOpen}
           <Button
             title={$_('user_preferences_toggle_button_open_title')}
@@ -104,14 +125,6 @@
     <Text element="p">
       {@html $_('guidelines_placeholder')}
     </Text>
-    <Button
-      title={$_('signout_button_title')}
-      onclick={() => {
-        dispatch({ type: 'UNSET_USER' });
-      }}
-      relaxed>
-      <Text>{$_('signout_button_text')}</Text>
-    </Button>
   </main>
 
   <footer>
@@ -121,4 +134,15 @@
       </small>
     </Text>
   </footer>
+
+  <aside class:hidden>
+    <Button
+      title={$_('signout_button_title')}
+      onclick={() => {
+        dispatch({ type: 'UNSET_USER' });
+      }}
+      relaxed>
+      <Text>{$_('signout_button_text')}</Text>
+    </Button>
+  </aside>
 </section>
