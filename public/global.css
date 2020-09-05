@@ -28,6 +28,8 @@
   --overlay-border-color: var(--alternate-color);
   --app-link-color: #2491ff;
   --muted-color: #8f8f8f;
+
+  --color-text-dimmed: var(--muted-color);
 }
 
 html,
@@ -53,4 +55,10 @@ a {
 a:hover,
 a:focus {
   text-decoration: underline;
+}
+
+.logo {
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI,
+    Roboto, Helvetica Neue, sans-serif;
+  letter-spacing: 0.075em;
 }

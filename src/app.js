@@ -1,10 +1,12 @@
 import { locale } from "svelte-i18n";
+import { get } from "svelte/store";
 import {
   clear,
   getDarkModeFromStorage,
   getPreferredLocaleFromStorage,
   getUserFromStorage,
   storageAvailable,
+  storeDarkMode,
   storePreferredLocale,
   storeUser,
 } from "./storage";
@@ -30,6 +32,10 @@ function app(action) {
     case "SET_USER":
       user.update(() => action.value);
       storeUser(action.value);
+      break;
+    case "TOGGLE_DARK_MODE":
+      darkMode.update((dark) => (!dark ? true : false));
+      storeDarkMode(get(darkMode));
       break;
     case "UNSET_USER":
       user.update(() => undefined);

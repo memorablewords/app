@@ -1,7 +1,9 @@
 <script>
   import { _ } from "svelte-i18n";
-  import { Button, Text } from "memorablewords-svelte-components";
+  import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
+  import { darkMode } from "./stores";
   import { dispatch } from "./app";
+  import { WELCOME_PAGE } from "./pages";
 </script>
 
 <style>
@@ -17,7 +19,6 @@
     align-items: center;
     display: flex;
     justify-content: start;
-    padding: 0 1.5rem;
   }
 
   main {
@@ -42,7 +43,37 @@
 </style>
 
 <section>
-  <header />
+  <header>
+    <Button
+      title={$_('home_button_title')}
+      onclick={() => {
+        dispatch({ type: 'VIEW_PAGE', value: WELCOME_PAGE });
+      }}>
+      <Icon type="memorablewords" size={24} />
+      <Spacer />
+      <div class="logo">
+        <Text>Memorable&nbsp;Words</Text>
+      </div>
+    </Button>
+    {#if $darkMode}
+      <Button
+        title={$_('dark_mode_toggle_button_dark_title')}
+        onclick={() => {
+          dispatch({ type: 'TOGGLE_DARK_MODE' });
+        }}>
+        <Icon type="sun" size={24} />
+      </Button>
+    {:else}
+      <Button
+        title={$_('dark_mode_toggle_button_light_title')}
+        onclick={() => {
+          dispatch({ type: 'TOGGLE_DARK_MODE' });
+        }}>
+        <Icon type="moon" size={24} />
+      </Button>
+    {/if}
+  </header>
+
   <main>
     <Text element="p">
       {@html $_('guidelines_placeholder')}

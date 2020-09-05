@@ -1,5 +1,8 @@
 {
+  "dark_mode_toggle_button_dark_title": "Activar modo claro",
+  "dark_mode_toggle_button_light_title": "Activar modo oscuro",
   "guidelines_placeholder": "Esta es una página temporal. Ha iniciado sesión exitosamente, pero por ahora eso es todo lo que puede hacer. Vuelva a probar en unos&nbsp;días!",
+  "home_button_title": "Ir a página de inicio",
   "locale_button_en_text": "Inglés",
   "locale_button_en_title": "Leer en inglés",
   "locale_button_es_text": "Español",
