@@ -15,6 +15,8 @@
     grid-template-rows: auto 1fr auto;
     min-height: 100%;
     padding: var(--app-padding);
+    background-color: var(--second-color);
+    color: var(--app-primary-color);
   }
 
   header {
