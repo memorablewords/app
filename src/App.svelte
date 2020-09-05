@@ -1,13 +1,14 @@
 <script>
   import { addMessages, init } from "svelte-i18n";
   import { darkMode, page, user } from "./stores";
+  import { DASHBOARD_PAGE, GUIDELINES_PAGE, SIGN_IN_PAGE } from "./pages";
   import { dispatch } from "./app";
   import { onMount } from "svelte";
-  import { GUIDELINES_PAGE, SIGN_IN_PAGE } from "./pages";
+  import Dashboard from "./Dashboard.svelte";
   import en from "./lang/en.json";
   import es from "./lang/es.json";
-  import SignIn from "./SignIn.svelte";
   import Guidelines from "./Guidelines.svelte";
+  import SignIn from "./SignIn.svelte";
   import Welcome from "./Welcome.svelte";
 
   addMessages("en", en);
@@ -46,6 +47,8 @@
     <SignIn />
   {:else if $user && $page === GUIDELINES_PAGE}
     <Guidelines />
+  {:else if $user && $page === DASHBOARD_PAGE}
+    <Dashboard />
   {:else}
     <Welcome />
   {/if}

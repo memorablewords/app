@@ -3,7 +3,7 @@
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
   import { darkMode, user, userPreferencesOpen } from "./stores";
   import { dispatch } from "./app";
-  import { WELCOME_PAGE } from "./pages";
+  import { DASHBOARD_PAGE, WELCOME_PAGE } from "./pages";
 
   $: hidden = !$userPreferencesOpen;
 </script>
@@ -45,6 +45,10 @@
   li {
     margin: 0;
     padding: 0;
+  }
+
+  .next {
+    padding: 32px 0;
   }
 
   footer {
@@ -266,6 +270,17 @@
         </Text>
       </li>
     </ul>
+
+    <div class="push next">
+      <Button
+        title={$_('acknowledge_guidelines_button_title')}
+        onclick={() => {
+          dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE });
+        }}
+        relaxed>
+        <Text>{$_('acknowledge_guidelines_button_text')}</Text>
+      </Button>
+    </div>
   </main>
 
   <footer>

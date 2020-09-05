@@ -3,6 +3,7 @@
   "acknowledge_guidelines_button_text": "Got it!",
   "dark_mode_toggle_button_dark_title": "Enable light mode",
   "dark_mode_toggle_button_light_title": "Enable dark mode",
+  "dashboard_empty_state": "No words are currently available for&nbsp;review.",
   "guidelines_placeholder": "This is a placeholder page. You are successfully signed in, but that's all you can do for now. Please check again in a few&nbsp;days!",
   "home_button_title": "Go to home page",
   "locale_button_en_text": "English",
