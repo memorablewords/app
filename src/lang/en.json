@@ -1,6 +1,7 @@
 {
   "acknowledge_guidelines_button_title": "Go to review lists",
   "acknowledge_guidelines_button_text": "Got it!",
+  "contributor_count": "{n, plural, =0 {You are the first contributor to this&nbsp;project!&nbsp;♥️} one {One&nbsp;other person is currently contributing to this&nbsp;project.} other {<b>#</b>&nbsp;other people are currently contributing to this&nbsp;project.}}",
   "dark_mode_toggle_button_dark_title": "Enable light mode",
   "dark_mode_toggle_button_light_title": "Enable dark mode",
   "dashboard_empty_state": "No words are currently available for&nbsp;review.",

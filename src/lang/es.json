@@ -1,6 +1,7 @@
 {
   "acknowledge_guidelines_button_title": "Ir a listado principal",
   "acknowledge_guidelines_button_text": "Entendí!",
+  "contributor_count": "{n, plural, =0 {¡Eres la primera persona en contribuir a este&nbsp;projecto!&nbsp;♥️} one {Una&nbsp;persona más está contribuyendo al&nbsp;projecto.} other {<b>#</b>&nbsp;otras personas están contribuyendo al&nbsp;projecto.}}",
   "dark_mode_toggle_button_dark_title": "Activar modo claro",
   "dark_mode_toggle_button_light_title": "Activar modo oscuro",
   "dashboard_empty_state": "No hay palabras para revisar en este&nbsp;momento.",

@@ -5,8 +5,11 @@
   import { dispatch } from "./app";
   import { GUIDELINES_PAGE, WELCOME_PAGE } from "./pages";
   import List from "./internal/List.svelte";
+  import contributors from "./data/contributors.json";
   import lists from "./data/lists.json";
 
+  $: countributorCount = contributors.filter(u => u.username != $user.username)
+    .length;
   $: hidden = !$userPreferencesOpen;
 </script>
 
@@ -34,6 +37,10 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
+  }
+
+  .contributors {
+    padding: calc(6 * var(--app-padding)) calc(3 * var(--app-padding));
   }
 
   footer {
@@ -122,6 +129,11 @@
   </header>
 
   <main>
+    <div class="contributors">
+      <Text>
+        {@html $_('contributor_count', { values: { n: countributorCount } })}
+      </Text>
+    </div>
     <div class="list">
       <List items={lists} />
     </div>
