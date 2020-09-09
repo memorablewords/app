@@ -1,0 +1,1589 @@
+{
+  "id": 1,
+  "words": [
+    {
+      "lemma": "abaratamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "abc",
+      "reviews": null
+    },
+    {
+      "lemma": "abecedario",
+      "reviews": null
+    },
+    {
+      "lemma": "abstinencia",
+      "reviews": null
+    },
+    {
+      "lemma": "acercamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "adenina",
+      "reviews": null
+    },
+    {
+      "lemma": "advenimiento",
+      "reviews": null
+    },
+    {
+      "lemma": "aerosol",
+      "reviews": null
+    },
+    {
+      "lemma": "afloramiento",
+      "reviews": null
+    },
+    {
+      "lemma": "agave",
+      "reviews": null
+    },
+    {
+      "lemma": "agradecido",
+      "reviews": null
+    },
+    {
+      "lemma": "agresividad",
+      "reviews": null
+    },
+    {
+      "lemma": "agricultor",
+      "reviews": null
+    },
+    {
+      "lemma": "ahorrador",
+      "reviews": null
+    },
+    {
+      "lemma": "alcantarillado",
+      "reviews": null
+    },
+    {
+      "lemma": "alcaparra",
+      "reviews": null
+    },
+    {
+      "lemma": "alforja",
+      "reviews": null
+    },
+    {
+      "lemma": "alpargata",
+      "reviews": null
+    },
+    {
+      "lemma": "amplitud",
+      "reviews": null
+    },
+    {
+      "lemma": "antisemita",
+      "reviews": null
+    },
+    {
+      "lemma": "apicultor",
+      "reviews": null
+    },
+    {
+      "lemma": "armenio",
+      "reviews": null
+    },
+    {
+      "lemma": "aserto",
+      "reviews": null
+    },
+    {
+      "lemma": "asesoramiento",
+      "reviews": null
+    },
+    {
+      "lemma": "asociacionismo",
+      "reviews": null
+    },
+    {
+      "lemma": "astillero",
+      "reviews": null
+    },
+    {
+      "lemma": "autodefensa",
+      "reviews": null
+    },
+    {
+      "lemma": "autoridad",
+      "reviews": null
+    },
+    {
+      "lemma": "autoritario",
+      "reviews": null
+    },
+    {
+      "lemma": "ave",
+      "reviews": null
+    },
+    {
+      "lemma": "avistamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "ayo",
+      "reviews": null
+    },
+    {
+      "lemma": "balonmano",
+      "reviews": null
+    },
+    {
+      "lemma": "banderillero",
+      "reviews": null
+    },
+    {
+      "lemma": "barranquillero",
+      "reviews": null
+    },
+    {
+      "lemma": "bastardo",
+      "reviews": null
+    },
+    {
+      "lemma": "bebo",
+      "reviews": null
+    },
+    {
+      "lemma": "beisbolista",
+      "reviews": null
+    },
+    {
+      "lemma": "beneficencia",
+      "reviews": null
+    },
+    {
+      "lemma": "beneficiario",
+      "reviews": null
+    },
+    {
+      "lemma": "beta",
+      "reviews": null
+    },
+    {
+      "lemma": "bicarbonato",
+      "reviews": null
+    },
+    {
+      "lemma": "bienaventurado",
+      "reviews": null
+    },
+    {
+      "lemma": "boa",
+      "reviews": null
+    },
+    {
+      "lemma": "bol",
+      "reviews": null
+    },
+    {
+      "lemma": "boy",
+      "reviews": null
+    },
+    {
+      "lemma": "braga",
+      "reviews": null
+    },
+    {
+      "lemma": "brevedad",
+      "reviews": null
+    },
+    {
+      "lemma": "brisa",
+      "reviews": null
+    },
+    {
+      "lemma": "brocal",
+      "reviews": null
+    },
+    {
+      "lemma": "bronceador",
+      "reviews": null
+    },
+    {
+      "lemma": "burra",
+      "reviews": null
+    },
+    {
+      "lemma": "busca",
+      "reviews": null
+    },
+    {
+      "lemma": "caballeriza",
+      "reviews": null
+    },
+    {
+      "lemma": "cabras",
+      "reviews": null
+    },
+    {
+      "lemma": "calatravo",
+      "reviews": null
+    },
+    {
+      "lemma": "callejero",
+      "reviews": null
+    },
+    {
+      "lemma": "camarista",
+      "reviews": null
+    },
+    {
+      "lemma": "canto",
+      "reviews": null
+    },
+    {
+      "lemma": "capacidad",
+      "reviews": null
+    },
+    {
+      "lemma": "carabinero",
+      "reviews": null
+    },
+    {
+      "lemma": "carburo",
+      "reviews": null
+    },
+    {
+      "lemma": "casera",
+      "reviews": null
+    },
+    {
+      "lemma": "cautiverio",
+      "reviews": null
+    },
+    {
+      "lemma": "cenote",
+      "reviews": null
+    },
+    {
+      "lemma": "centavo",
+      "reviews": null
+    },
+    {
+      "lemma": "centralita",
+      "reviews": null
+    },
+    {
+      "lemma": "cepo",
+      "reviews": null
+    },
+    {
+      "lemma": "cerezo",
+      "reviews": null
+    },
+    {
+      "lemma": "certificado",
+      "reviews": null
+    },
+    {
+      "lemma": "charango",
+      "reviews": null
+    },
+    {
+      "lemma": "che",
+      "reviews": null
+    },
+    {
+      "lemma": "chulo",
+      "reviews": null
+    },
+    {
+      "lemma": "ciberespacio",
+      "reviews": null
+    },
+    {
+      "lemma": "clandestinidad",
+      "reviews": null
+    },
+    {
+      "lemma": "cobertura",
+      "reviews": null
+    },
+    {
+      "lemma": "cola",
+      "reviews": null
+    },
+    {
+      "lemma": "cole",
+      "reviews": null
+    },
+    {
+      "lemma": "colonialismo",
+      "reviews": null
+    },
+    {
+      "lemma": "comida",
+      "reviews": null
+    },
+    {
+      "lemma": "comino",
+      "reviews": null
+    },
+    {
+      "lemma": "comparabilidad",
+      "reviews": null
+    },
+    {
+      "lemma": "compatibilidad",
+      "reviews": null
+    },
+    {
+      "lemma": "comunicaciones",
+      "reviews": null
+    },
+    {
+      "lemma": "concesionario",
+      "reviews": null
+    },
+    {
+      "lemma": "concordia",
+      "reviews": null
+    },
+    {
+      "lemma": "condado",
+      "reviews": null
+    },
+    {
+      "lemma": "condicionante",
+      "reviews": null
+    },
+    {
+      "lemma": "confeso",
+      "reviews": null
+    },
+    {
+      "lemma": "conjuntivitis",
+      "reviews": null
+    },
+    {
+      "lemma": "connotado",
+      "reviews": null
+    },
+    {
+      "lemma": "conservo",
+      "reviews": null
+    },
+    {
+      "lemma": "consola",
+      "reviews": null
+    },
+    {
+      "lemma": "conteo",
+      "reviews": null
+    },
+    {
+      "lemma": "contestador",
+      "reviews": null
+    },
+    {
+      "lemma": "contrabandista",
+      "reviews": null
+    },
+    {
+      "lemma": "contrarreforma",
+      "reviews": null
+    },
+    {
+      "lemma": "contratista",
+      "reviews": null
+    },
+    {
+      "lemma": "corbata",
+      "reviews": null
+    },
+    {
+      "lemma": "corridos",
+      "reviews": null
+    },
+    {
+      "lemma": "cortinilla",
+      "reviews": null
+    },
+    {
+      "lemma": "cortocircuito",
+      "reviews": null
+    },
+    {
+      "lemma": "cosmonauta",
+      "reviews": null
+    },
+    {
+      "lemma": "coto",
+      "reviews": null
+    },
+    {
+      "lemma": "coz",
+      "reviews": null
+    },
+    {
+      "lemma": "cuba",
+      "reviews": null
+    },
+    {
+      "lemma": "cuy",
+      "reviews": null
+    },
+    {
+      "lemma": "cuye",
+      "reviews": null
+    },
+    {
+      "lemma": "dan",
+      "reviews": null
+    },
+    {
+      "lemma": "dante",
+      "reviews": null
+    },
+    {
+      "lemma": "debilitamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "desconcierto",
+      "reviews": null
+    },
+    {
+      "lemma": "descontento",
+      "reviews": null
+    },
+    {
+      "lemma": "desleal",
+      "reviews": null
+    },
+    {
+      "lemma": "desplazado",
+      "reviews": null
+    },
+    {
+      "lemma": "destinatario",
+      "reviews": null
+    },
+    {
+      "lemma": "detalle",
+      "reviews": null
+    },
+    {
+      "lemma": "determinismo",
+      "reviews": null
+    },
+    {
+      "lemma": "diabla",
+      "reviews": null
+    },
+    {
+      "lemma": "diablito",
+      "reviews": null
+    },
+    {
+      "lemma": "diferido",
+      "reviews": null
+    },
+    {
+      "lemma": "dificultad",
+      "reviews": null
+    },
+    {
+      "lemma": "digital",
+      "reviews": null
+    },
+    {
+      "lemma": "dinosaurio",
+      "reviews": null
+    },
+    {
+      "lemma": "diodo",
+      "reviews": null
+    },
+    {
+      "lemma": "disponibilidad",
+      "reviews": null
+    },
+    {
+      "lemma": "documental",
+      "reviews": null
+    },
+    {
+      "lemma": "dolmen",
+      "reviews": null
+    },
+    {
+      "lemma": "duda",
+      "reviews": null
+    },
+    {
+      "lemma": "ecu",
+      "reviews": null
+    },
+    {
+      "lemma": "efectividad",
+      "reviews": null
+    },
+    {
+      "lemma": "eficacia",
+      "reviews": null
+    },
+    {
+      "lemma": "ejecutor",
+      "reviews": null
+    },
+    {
+      "lemma": "emboscada",
+      "reviews": null
+    },
+    {
+      "lemma": "eme",
+      "reviews": null
+    },
+    {
+      "lemma": "emisora",
+      "reviews": null
+    },
+    {
+      "lemma": "empanadilla",
+      "reviews": null
+    },
+    {
+      "lemma": "emprendimiento",
+      "reviews": null
+    },
+    {
+      "lemma": "encarecimiento",
+      "reviews": null
+    },
+    {
+      "lemma": "encino",
+      "reviews": null
+    },
+    {
+      "lemma": "endeudamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "endurecimiento",
+      "reviews": null
+    },
+    {
+      "lemma": "ene",
+      "reviews": null
+    },
+    {
+      "lemma": "enemigo",
+      "reviews": null
+    },
+    {
+      "lemma": "enjuiciamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "enraizamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "enterramiento",
+      "reviews": null
+    },
+    {
+      "lemma": "entumecimiento",
+      "reviews": null
+    },
+    {
+      "lemma": "equipo",
+      "reviews": null
+    },
+    {
+      "lemma": "ese",
+      "reviews": null
+    },
+    {
+      "lemma": "esencialismo",
+      "reviews": null
+    },
+    {
+      "lemma": "especialista",
+      "reviews": null
+    },
+    {
+      "lemma": "espejismo",
+      "reviews": null
+    },
+    {
+      "lemma": "espontaneidad",
+      "reviews": null
+    },
+    {
+      "lemma": "estalactita",
+      "reviews": null
+    },
+    {
+      "lemma": "estero",
+      "reviews": null
+    },
+    {
+      "lemma": "estropicio",
+      "reviews": null
+    },
+    {
+      "lemma": "estudiantado",
+      "reviews": null
+    },
+    {
+      "lemma": "exceso",
+      "reviews": null
+    },
+    {
+      "lemma": "excipiente",
+      "reviews": null
+    },
+    {
+      "lemma": "exhibicionista",
+      "reviews": null
+    },
+    {
+      "lemma": "existencias",
+      "reviews": null
+    },
+    {
+      "lemma": "expolio",
+      "reviews": null
+    },
+    {
+      "lemma": "expresiones",
+      "reviews": null
+    },
+    {
+      "lemma": "faceta",
+      "reviews": null
+    },
+    {
+      "lemma": "fan",
+      "reviews": null
+    },
+    {
+      "lemma": "fax",
+      "reviews": null
+    },
+    {
+      "lemma": "fertilizante",
+      "reviews": null
+    },
+    {
+      "lemma": "fibromialgia",
+      "reviews": null
+    },
+    {
+      "lemma": "financiamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "fineza",
+      "reviews": null
+    },
+    {
+      "lemma": "flama",
+      "reviews": null
+    },
+    {
+      "lemma": "fondeo",
+      "reviews": null
+    },
+    {
+      "lemma": "frialdad",
+      "reviews": null
+    },
+    {
+      "lemma": "funcionamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "gap",
+      "reviews": null
+    },
+    {
+      "lemma": "garaje",
+      "reviews": null
+    },
+    {
+      "lemma": "gea",
+      "reviews": null
+    },
+    {
+      "lemma": "generalidades",
+      "reviews": null
+    },
+    {
+      "lemma": "gilipollas",
+      "reviews": null
+    },
+    {
+      "lemma": "gimnasta",
+      "reviews": null
+    },
+    {
+      "lemma": "gin",
+      "reviews": null
+    },
+    {
+      "lemma": "glucosa",
+      "reviews": null
+    },
+    {
+      "lemma": "gol",
+      "reviews": null
+    },
+    {
+      "lemma": "grafismo",
+      "reviews": null
+    },
+    {
+      "lemma": "grafitero",
+      "reviews": null
+    },
+    {
+      "lemma": "grava",
+      "reviews": null
+    },
+    {
+      "lemma": "guante",
+      "reviews": null
+    },
+    {
+      "lemma": "guarda",
+      "reviews": null
+    },
+    {
+      "lemma": "guardaespaldas",
+      "reviews": null
+    },
+    {
+      "lemma": "haz",
+      "reviews": null
+    },
+    {
+      "lemma": "hebreo",
+      "reviews": null
+    },
+    {
+      "lemma": "hemoglobina",
+      "reviews": null
+    },
+    {
+      "lemma": "hermetismo",
+      "reviews": null
+    },
+    {
+      "lemma": "hielera",
+      "reviews": null
+    },
+    {
+      "lemma": "hiperplasia",
+      "reviews": null
+    },
+    {
+      "lemma": "homosexualidad",
+      "reviews": null
+    },
+    {
+      "lemma": "hora",
+      "reviews": null
+    },
+    {
+      "lemma": "horas",
+      "reviews": null
+    },
+    {
+      "lemma": "huida",
+      "reviews": null
+    },
+    {
+      "lemma": "iberoamericano",
+      "reviews": null
+    },
+    {
+      "lemma": "impresentable",
+      "reviews": null
+    },
+    {
+      "lemma": "incoherencia",
+      "reviews": null
+    },
+    {
+      "lemma": "incomprendido",
+      "reviews": null
+    },
+    {
+      "lemma": "inconsecuencia",
+      "reviews": null
+    },
+    {
+      "lemma": "inconsistencia",
+      "reviews": null
+    },
+    {
+      "lemma": "inconveniente",
+      "reviews": null
+    },
+    {
+      "lemma": "inga",
+      "reviews": null
+    },
+    {
+      "lemma": "inmigrante",
+      "reviews": null
+    },
+    {
+      "lemma": "inmovilidad",
+      "reviews": null
+    },
+    {
+      "lemma": "inmovilizado",
+      "reviews": null
+    },
+    {
+      "lemma": "instalador",
+      "reviews": null
+    },
+    {
+      "lemma": "instituciones",
+      "reviews": null
+    },
+    {
+      "lemma": "inteligencia",
+      "reviews": null
+    },
+    {
+      "lemma": "intemperie",
+      "reviews": null
+    },
+    {
+      "lemma": "internacional",
+      "reviews": null
+    },
+    {
+      "lemma": "intestino",
+      "reviews": null
+    },
+    {
+      "lemma": "intranquilidad",
+      "reviews": null
+    },
+    {
+      "lemma": "intransigente",
+      "reviews": null
+    },
+    {
+      "lemma": "investigador",
+      "reviews": null
+    },
+    {
+      "lemma": "inviabilidad",
+      "reviews": null
+    },
+    {
+      "lemma": "invisibilidad",
+      "reviews": null
+    },
+    {
+      "lemma": "izquierda",
+      "reviews": null
+    },
+    {
+      "lemma": "jale",
+      "reviews": null
+    },
+    {
+      "lemma": "jane",
+      "reviews": null
+    },
+    {
+      "lemma": "jubileo",
+      "reviews": null
+    },
+    {
+      "lemma": "jura",
+      "reviews": null
+    },
+    {
+      "lemma": "laca",
+      "reviews": null
+    },
+    {
+      "lemma": "lagunero",
+      "reviews": null
+    },
+    {
+      "lemma": "lazarillo",
+      "reviews": null
+    },
+    {
+      "lemma": "lirio",
+      "reviews": null
+    },
+    {
+      "lemma": "lis",
+      "reviews": null
+    },
+    {
+      "lemma": "literatura",
+      "reviews": null
+    },
+    {
+      "lemma": "lleno",
+      "reviews": null
+    },
+    {
+      "lemma": "llovizna",
+      "reviews": null
+    },
+    {
+      "lemma": "locutorio",
+      "reviews": null
+    },
+    {
+      "lemma": "lujuria",
+      "reviews": null
+    },
+    {
+      "lemma": "magnificencia",
+      "reviews": null
+    },
+    {
+      "lemma": "mar",
+      "reviews": null
+    },
+    {
+      "lemma": "marte",
+      "reviews": null
+    },
+    {
+      "lemma": "masoquista",
+      "reviews": null
+    },
+    {
+      "lemma": "mayordomo",
+      "reviews": null
+    },
+    {
+      "lemma": "mequetrefe",
+      "reviews": null
+    },
+    {
+      "lemma": "microfinanzas",
+      "reviews": null
+    },
+    {
+      "lemma": "mili",
+      "reviews": null
+    },
+    {
+      "lemma": "ministerial",
+      "reviews": null
+    },
+    {
+      "lemma": "mitocondria",
+      "reviews": null
+    },
+    {
+      "lemma": "mola",
+      "reviews": null
+    },
+    {
+      "lemma": "moqueta",
+      "reviews": null
+    },
+    {
+      "lemma": "moratoria",
+      "reviews": null
+    },
+    {
+      "lemma": "movida",
+      "reviews": null
+    },
+    {
+      "lemma": "musicoterapia",
+      "reviews": null
+    },
+    {
+      "lemma": "mutante",
+      "reviews": null
+    },
+    {
+      "lemma": "nazi",
+      "reviews": null
+    },
+    {
+      "lemma": "neoyorquino",
+      "reviews": null
+    },
+    {
+      "lemma": "nepotismo",
+      "reviews": null
+    },
+    {
+      "lemma": "neurociencia",
+      "reviews": null
+    },
+    {
+      "lemma": "nibelungo",
+      "reviews": null
+    },
+    {
+      "lemma": "nombre",
+      "reviews": null
+    },
+    {
+      "lemma": "nudillo",
+      "reviews": null
+    },
+    {
+      "lemma": "obispado",
+      "reviews": null
+    },
+    {
+      "lemma": "ocaso",
+      "reviews": null
+    },
+    {
+      "lemma": "oportunidad",
+      "reviews": null
+    },
+    {
+      "lemma": "opus",
+      "reviews": null
+    },
+    {
+      "lemma": "origami",
+      "reviews": null
+    },
+    {
+      "lemma": "oscurantismo",
+      "reviews": null
+    },
+    {
+      "lemma": "oscuridad",
+      "reviews": null
+    },
+    {
+      "lemma": "palabras",
+      "reviews": null
+    },
+    {
+      "lemma": "palacio",
+      "reviews": null
+    },
+    {
+      "lemma": "palangana",
+      "reviews": null
+    },
+    {
+      "lemma": "palmeral",
+      "reviews": null
+    },
+    {
+      "lemma": "paraaron",
+      "reviews": null
+    },
+    {
+      "lemma": "parrilla",
+      "reviews": null
+    },
+    {
+      "lemma": "pastoral",
+      "reviews": null
+    },
+    {
+      "lemma": "paulina",
+      "reviews": null
+    },
+    {
+      "lemma": "pavimento",
+      "reviews": null
+    },
+    {
+      "lemma": "payo",
+      "reviews": null
+    },
+    {
+      "lemma": "pensamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "perfeccionista",
+      "reviews": null
+    },
+    {
+      "lemma": "perpetrador",
+      "reviews": null
+    },
+    {
+      "lemma": "personalismo",
+      "reviews": null
+    },
+    {
+      "lemma": "pesadumbre",
+      "reviews": null
+    },
+    {
+      "lemma": "peseta",
+      "reviews": null
+    },
+    {
+      "lemma": "pica",
+      "reviews": null
+    },
+    {
+      "lemma": "picador",
+      "reviews": null
+    },
+    {
+      "lemma": "pichichi",
+      "reviews": null
+    },
+    {
+      "lemma": "pie",
+      "reviews": null
+    },
+    {
+      "lemma": "piel",
+      "reviews": null
+    },
+    {
+      "lemma": "pinga",
+      "reviews": null
+    },
+    {
+      "lemma": "pingo",
+      "reviews": null
+    },
+    {
+      "lemma": "piquete",
+      "reviews": null
+    },
+    {
+      "lemma": "plus",
+      "reviews": null
+    },
+    {
+      "lemma": "poblamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "pop",
+      "reviews": null
+    },
+    {
+      "lemma": "porcentaje",
+      "reviews": null
+    },
+    {
+      "lemma": "portafolios",
+      "reviews": null
+    },
+    {
+      "lemma": "posmodernidad",
+      "reviews": null
+    },
+    {
+      "lemma": "pota",
+      "reviews": null
+    },
+    {
+      "lemma": "poto",
+      "reviews": null
+    },
+    {
+      "lemma": "preadolescente",
+      "reviews": null
+    },
+    {
+      "lemma": "precordillera",
+      "reviews": null
+    },
+    {
+      "lemma": "pregunta",
+      "reviews": null
+    },
+    {
+      "lemma": "pro",
+      "reviews": null
+    },
+    {
+      "lemma": "probidad",
+      "reviews": null
+    },
+    {
+      "lemma": "procedimiento",
+      "reviews": null
+    },
+    {
+      "lemma": "profesor",
+      "reviews": null
+    },
+    {
+      "lemma": "proletario",
+      "reviews": null
+    },
+    {
+      "lemma": "prolijidad",
+      "reviews": null
+    },
+    {
+      "lemma": "psicoanalista",
+      "reviews": null
+    },
+    {
+      "lemma": "puebla",
+      "reviews": null
+    },
+    {
+      "lemma": "puntal",
+      "reviews": null
+    },
+    {
+      "lemma": "pus",
+      "reviews": null
+    },
+    {
+      "lemma": "quintal",
+      "reviews": null
+    },
+    {
+      "lemma": "radiestesista",
+      "reviews": null
+    },
+    {
+      "lemma": "rampa",
+      "reviews": null
+    },
+    {
+      "lemma": "raquis",
+      "reviews": null
+    },
+    {
+      "lemma": "recepcionista",
+      "reviews": null
+    },
+    {
+      "lemma": "recoleto",
+      "reviews": null
+    },
+    {
+      "lemma": "reconocimiento",
+      "reviews": null
+    },
+    {
+      "lemma": "recorro",
+      "reviews": null
+    },
+    {
+      "lemma": "redil",
+      "reviews": null
+    },
+    {
+      "lemma": "reforzamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "refrigerador",
+      "reviews": null
+    },
+    {
+      "lemma": "refrigeradora",
+      "reviews": null
+    },
+    {
+      "lemma": "regionalismo",
+      "reviews": null
+    },
+    {
+      "lemma": "relegado",
+      "reviews": null
+    },
+    {
+      "lemma": "relente",
+      "reviews": null
+    },
+    {
+      "lemma": "rentabilidad",
+      "reviews": null
+    },
+    {
+      "lemma": "renuencia",
+      "reviews": null
+    },
+    {
+      "lemma": "representante",
+      "reviews": null
+    },
+    {
+      "lemma": "repuesto",
+      "reviews": null
+    },
+    {
+      "lemma": "restaurante",
+      "reviews": null
+    },
+    {
+      "lemma": "reversibilidad",
+      "reviews": null
+    },
+    {
+      "lemma": "rock",
+      "reviews": null
+    },
+    {
+      "lemma": "run",
+      "reviews": null
+    },
+    {
+      "lemma": "sacerdocio",
+      "reviews": null
+    },
+    {
+      "lemma": "salchicha",
+      "reviews": null
+    },
+    {
+      "lemma": "santafesino",
+      "reviews": null
+    },
+    {
+      "lemma": "seda",
+      "reviews": null
+    },
+    {
+      "lemma": "semipenumbra",
+      "reviews": null
+    },
+    {
+      "lemma": "sentada",
+      "reviews": null
+    },
+    {
+      "lemma": "sepulturero",
+      "reviews": null
+    },
+    {
+      "lemma": "seriedad",
+      "reviews": null
+    },
+    {
+      "lemma": "soberbio",
+      "reviews": null
+    },
+    {
+      "lemma": "sobreseimiento",
+      "reviews": null
+    },
+    {
+      "lemma": "soga",
+      "reviews": null
+    },
+    {
+      "lemma": "soma",
+      "reviews": null
+    },
+    {
+      "lemma": "squash",
+      "reviews": null
+    },
+    {
+      "lemma": "subcontratista",
+      "reviews": null
+    },
+    {
+      "lemma": "subsecretario",
+      "reviews": null
+    },
+    {
+      "lemma": "subsidio",
+      "reviews": null
+    },
+    {
+      "lemma": "sueco",
+      "reviews": null
+    },
+    {
+      "lemma": "superobjetivo",
+      "reviews": null
+    },
+    {
+      "lemma": "surfista",
+      "reviews": null
+    },
+    {
+      "lemma": "taco",
+      "reviews": null
+    },
+    {
+      "lemma": "taita",
+      "reviews": null
+    },
+    {
+      "lemma": "taponamiento",
+      "reviews": null
+    },
+    {
+      "lemma": "tarja",
+      "reviews": null
+    },
+    {
+      "lemma": "telefonista",
+      "reviews": null
+    },
+    {
+      "lemma": "tenis",
+      "reviews": null
+    },
+    {
+      "lemma": "timbal",
+      "reviews": null
+    },
+    {
+      "lemma": "tique",
+      "reviews": null
+    },
+    {
+      "lemma": "tonga",
+      "reviews": null
+    },
+    {
+      "lemma": "toponimia",
+      "reviews": null
+    },
+    {
+      "lemma": "torcedura",
+      "reviews": null
+    },
+    {
+      "lemma": "torta",
+      "reviews": null
+    },
+    {
+      "lemma": "total",
+      "reviews": null
+    },
+    {
+      "lemma": "totalidad",
+      "reviews": null
+    },
+    {
+      "lemma": "transferencia",
+      "reviews": null
+    },
+    {
+      "lemma": "trashumancia",
+      "reviews": null
+    },
+    {
+      "lemma": "trasnacional",
+      "reviews": null
+    },
+    {
+      "lemma": "trastienda",
+      "reviews": null
+    },
+    {
+      "lemma": "trazabilidad",
+      "reviews": null
+    },
+    {
+      "lemma": "trepa",
+      "reviews": null
+    },
+    {
+      "lemma": "tronos",
+      "reviews": null
+    },
+    {
+      "lemma": "tuberculoso",
+      "reviews": null
+    },
+    {
+      "lemma": "tuno",
+      "reviews": null
+    },
+    {
+      "lemma": "tuteo",
+      "reviews": null
+    },
+    {
+      "lemma": "uniformidad",
+      "reviews": null
+    },
+    {
+      "lemma": "uniida",
+      "reviews": null
+    },
+    {
+      "lemma": "uva",
+      "reviews": null
+    },
+    {
+      "lemma": "uve",
+      "reviews": null
+    },
+    {
+      "lemma": "val",
+      "reviews": null
+    },
+    {
+      "lemma": "vale",
+      "reviews": null
+    },
+    {
+      "lemma": "vasco",
+      "reviews": null
+    },
+    {
+      "lemma": "vehemencia",
+      "reviews": null
+    },
+    {
+      "lemma": "vicepresidente",
+      "reviews": null
+    },
+    {
+      "lemma": "vid",
+      "reviews": null
+    },
+    {
+      "lemma": "viejita",
+      "reviews": null
+    },
+    {
+      "lemma": "viese",
+      "reviews": null
+    },
+    {
+      "lemma": "virreinato",
+      "reviews": null
+    },
+    {
+      "lemma": "yuyo",
+      "reviews": null
+    },
+    {
+      "lemma": "zancadilla",
+      "reviews": null
+    },
+    {
+      "lemma": "zarcillo",
+      "reviews": null
+    },
+    {
+      "lemma": "zoo",
+      "reviews": null
+    },
+    {
+      "lemma": "zutano",
+      "reviews": null
+    }
+  ]
+}
