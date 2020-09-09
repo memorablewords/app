@@ -4,7 +4,12 @@
   import { darkMode, user, userPreferencesOpen } from "./stores";
   import { dispatch } from "./app";
   import { GUIDELINES_PAGE, WELCOME_PAGE } from "./pages";
+  import List from "./internal/List.svelte";
+  import contributors from "./data/contributors.json";
+  import lists from "./data/lists.json";
 
+  $: countributorCount = contributors.filter(u => u.username != $user.username)
+    .length;
   $: hidden = !$userPreferencesOpen;
 </script>
 
@@ -31,8 +36,11 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding: calc(3 * var(--app-padding));
+    justify-content: start;
+  }
+
+  .contributors {
+    padding: calc(6 * var(--app-padding)) calc(3 * var(--app-padding));
   }
 
   footer {
@@ -121,9 +129,14 @@
   </header>
 
   <main>
-    <Text element="p">
-      {@html $_('dashboard_empty_state')}
-    </Text>
+    <div class="contributors">
+      <Text>
+        {@html $_('contributor_count', { values: { n: countributorCount } })}
+      </Text>
+    </div>
+    <div class="list">
+      <List items={lists} />
+    </div>
   </main>
 
   <footer>
