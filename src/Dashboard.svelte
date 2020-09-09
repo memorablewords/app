@@ -4,6 +4,8 @@
   import { darkMode, user, userPreferencesOpen } from "./stores";
   import { dispatch } from "./app";
   import { GUIDELINES_PAGE, WELCOME_PAGE } from "./pages";
+  import List from "./internal/List.svelte";
+  import lists from "./data/lists.json";
 
   $: hidden = !$userPreferencesOpen;
 </script>
@@ -31,8 +33,7 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding: calc(3 * var(--app-padding));
+    justify-content: start;
   }
 
   footer {
@@ -121,9 +122,9 @@
   </header>
 
   <main>
-    <Text element="p">
-      {@html $_('dashboard_empty_state')}
-    </Text>
+    <div class="list">
+      <List items={lists} />
+    </div>
   </main>
 
   <footer>

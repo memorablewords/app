@@ -30,6 +30,7 @@
   "locale_button_en_title": "Leer en inglés",
   "locale_button_es_text": "Español",
   "locale_button_es_title": "Leer en español (castellano)",
+  "list_word_count": "{n, plural, one {Una palabra} other {# palabras}}",
   "made_by": "creada&nbsp;con&nbsp;♥️&nbsp;por&nbsp;<a href=\"https://github.com/memorablewords\">@gonzalo-bulnes</a>",
   "purpose_reminder": "Una contribución al conocimiento público.",
   "purpose_statement": "Identificar palabras fáciles de recordar en su idioma hace más accesible el uso de contraseñas fuertes para más&nbsp;personas.",
