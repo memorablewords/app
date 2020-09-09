@@ -29,7 +29,7 @@ record-release: CURRENT_RELEASE = $$((${RELEASE} + 1))
 record-release: ## Commit a release to version control
 	@git add make/release.mk src/version.js \
 	&& git commit -m "Add release #${CURRENT_RELEASE}" \
-	&& git tag -a "release-${CURRENT_RELEASE}" -m "Release #${RECURRENT_RELEASELEASE}"
+	&& git tag -a "release-${CURRENT_RELEASE}" -m "Release #${CURRENT_RELEASE}"
 
 .PHONY: src/version.js # ensure the version is always fresh
 src/version.js:
