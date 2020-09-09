@@ -3,7 +3,7 @@
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
   import { darkMode, user, userPreferencesOpen } from "./stores";
   import { dispatch } from "./app";
-  import { GUIDELINES_PAGE, WELCOME_PAGE } from "./pages";
+  import { GUIDELINES_PAGE, REVIEW_PAGE, WELCOME_PAGE } from "./pages";
   import List from "./internal/List.svelte";
   import contributors from "./data/contributors.json";
   import lists from "./data/lists.json";
@@ -135,7 +135,12 @@
       </Text>
     </div>
     <div class="list">
-      <List items={lists} />
+      <List
+        items={lists}
+        onclick={listId => () => {
+          dispatch({ type: 'SET_CURRENT_LIST', value: listId });
+          dispatch({ type: 'VIEW_PAGE', value: REVIEW_PAGE });
+        }} />
     </div>
   </main>
 

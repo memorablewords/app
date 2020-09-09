@@ -5,6 +5,7 @@
   "dark_mode_toggle_button_dark_title": "Enable light mode",
   "dark_mode_toggle_button_light_title": "Enable dark mode",
   "dashboard_empty_state": "No words are currently available for&nbsp;review.",
+  "dashboard_review_button_title": "Review words from this list",
   "guidelines_progress_tracking_0_title": "How can I know if my reviews have been saved?",
   "guidelines_progress_tracking_1": "Each list in your dashboard displays the number of words you've reviewed,as well as the status of those reviews.",
   "guidelines_progress_tracking_2": "<strong>Pending</strong> reviews are stored on your browser, but you haven't saved them to your device yet. Those would be lost if you were to sign out.",
