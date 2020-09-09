@@ -1,5 +1,6 @@
 export const ATTRIBUTION_KEY = "attribution-9432d";
 export const DARK_MODE_KEY = "darkMode-lduwe";
+export const FLIP_MODE_KEY = "flipMode-i874h";
 export const PREFERRED_LOCALE_KEY = "preferredLocale-owjfu";
 export const USERNAME_KEY = "username-she3e";
 
@@ -13,6 +14,14 @@ export function storeDarkMode(mode) {
 
 export function getDarkModeFromStorage() {
   return localStorage.getItem(DARK_MODE_KEY) === "true";
+}
+
+export function storeFlipMode(mode) {
+  localStorage.setItem(FLIP_MODE_KEY, mode);
+}
+
+export function getFlipModeFromStorage() {
+  return localStorage.getItem(FLIP_MODE_KEY) === "true";
 }
 
 export function storePreferredLocale(mode) {

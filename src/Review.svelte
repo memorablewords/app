@@ -1,13 +1,13 @@
 <script>
   import { _ } from "svelte-i18n";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
-  import { darkMode, user, userPreferencesOpen } from "./stores";
+  import { darkMode, flipMode, user, userPreferencesOpen } from "./stores";
   import { dispatch } from "./app";
   import { REVIEW_PAGE, WELCOME_PAGE } from "./pages";
   import Word from "./internal/Word.svelte";
 
   $: hidden = !$userPreferencesOpen;
-  let mirror = false;
+  $: mirror = $flipMode;
   let current = { lemma: "ayuntamientismo" };
 </script>
 
@@ -24,6 +24,10 @@
     align-items: center;
     display: flex;
     justify-content: start;
+  }
+
+  .push {
+    margin-left: auto;
   }
 
   main {
@@ -69,16 +73,37 @@
   .yes {
     /* background-color: #8f8; */
     grid-area: yes;
+    margin: 2px 0 0 2px;
   }
 
   .no {
     /* background-color: #888; */
     grid-area: no;
+    margin: 0 0 2px 2px;
   }
 
   .reject {
     /* background-color: #f88; */
     grid-area: reject;
+    margin: 0 2px 0 0;
+  }
+
+  .mirror .yes {
+    /* background-color: #8f8; */
+    grid-area: yes;
+    margin: 2px 2px 0 0;
+  }
+
+  .mirror .no {
+    /* background-color: #888; */
+    grid-area: no;
+    margin: 0 2px 2px 0;
+  }
+
+  .mirror .reject {
+    /* background-color: #f88; */
+    grid-area: reject;
+    margin: 0 0 0 2px;
   }
 </style>
 
@@ -112,6 +137,26 @@
         <Icon type="moon" size={24} />
       </Button>
     {/if}
+
+    <div class="push">
+      {#if $flipMode}
+        <Button
+          title={$_('flip_mode_toggle_button_left_title')}
+          onclick={() => {
+            dispatch({ type: 'TOGGLE_HAND_MODE' });
+          }}>
+          <Icon type="flip" size={24} />
+        </Button>
+      {:else}
+        <Button
+          title={$_('flip_mode_toggle_button_right_title')}
+          onclick={() => {
+            dispatch({ type: 'TOGGLE_HAND_MODE' });
+          }}>
+          <Icon type="flip-2" size={24} />
+        </Button>
+      {/if}
+    </div>
   </header>
 
   <main>
@@ -125,7 +170,8 @@
         <Button
           type="check"
           title="This word is fine"
-          onclick={() => dispatch({ type: 'DECISION', value: 'DECISION_YES' })}>
+          onclick={() => dispatch({ type: 'DECISION', value: 'DECISION_YES' })}
+          blown>
           <Text>YES</Text>
           <Spacer />
           <Icon type="check" size={24} />
@@ -134,7 +180,8 @@
       <div class="no area">
         <Button
           title="Don't use this word"
-          onclick={() => dispatch({ type: 'DECISION', value: 'DECISION_NO' })}>
+          onclick={() => dispatch({ type: 'DECISION', value: 'DECISION_NO' })}
+          blown>
           <Text>NO</Text>
           <Spacer />
           <Icon type="x" size={24} />
@@ -146,7 +193,8 @@
           onclick={() => dispatch({
               type: 'DECISION',
               value: 'DECISION_REJECT'
-            })}>
+            })}
+          blown>
           <Text>No way!</Text>
           <Spacer />
           <Icon type="trash-2" size={24} />

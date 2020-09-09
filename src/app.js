@@ -3,15 +3,18 @@ import { get } from "svelte/store";
 import {
   clear,
   getDarkModeFromStorage,
+  getFlipModeFromStorage,
   getPreferredLocaleFromStorage,
   getUserFromStorage,
   storageAvailable,
   storeDarkMode,
+  storeFlipMode,
   storePreferredLocale,
   storeUser,
 } from "./storage";
 import {
   darkMode,
+  flipMode,
   page,
   preferredLocale,
   user,
@@ -27,6 +30,7 @@ function app(action) {
       if (storageAvailable("localStorage")) {
         user.update(() => getUserFromStorage());
         darkMode.update(() => getDarkModeFromStorage());
+        flipMode.update(() => getFlipModeFromStorage());
         dispatch({
           type: "SET_LOCALE",
           value: getPreferredLocaleFromStorage(),
@@ -45,6 +49,10 @@ function app(action) {
     case "TOGGLE_DARK_MODE":
       darkMode.update((dark) => (!dark ? true : false));
       storeDarkMode(get(darkMode));
+      break;
+    case "TOGGLE_HAND_MODE":
+      flipMode.update((flip) => (!flip ? true : false));
+      storeFlipMode(get(flipMode));
       break;
     case "TOGGLE_USER_PREFERENCES":
       userPreferencesOpen.update((userPreferencesOpen) =>
