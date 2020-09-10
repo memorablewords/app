@@ -1,16 +1,16 @@
 <script>
   export let word;
   word = word || "?";
-  let three = word && word.length <= 3;
-  let four = word && word.length == 4;
-  let five = word && word.length == 5;
-  let six = word && word.length == 6;
-  let seven = word && word.length == 7;
-  let eight = word && word.length == 8;
-  let nine = word && word.length == 9;
-  let ten = word && word.length == 10;
-  let eleven = word && word.length == 11;
-  let twelve = word && word.length >= 12;
+  $: three = word && word.length <= 3;
+  $: four = word && word.length == 4;
+  $: five = word && word.length == 5;
+  $: six = word && word.length == 6;
+  $: seven = word && word.length == 7;
+  $: eight = word && word.length == 8;
+  $: nine = word && word.length == 9;
+  $: ten = word && word.length == 10;
+  $: eleven = word && word.length == 11;
+  $: twelve = word && word.length >= 12;
 </script>
 
 <style>
