@@ -3,7 +3,7 @@
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
   import { darkMode, flipMode, user, userPreferencesOpen } from "./stores";
   import { dispatch } from "./app";
-  import { REVIEW_PAGE, WELCOME_PAGE } from "./pages";
+  import { DASHBOARD_PAGE, REVIEW_PAGE } from "./pages";
   import Word from "./internal/Word.svelte";
 
   $: hidden = !$userPreferencesOpen;
@@ -112,7 +112,7 @@
     <Button
       title={$_('home_button_title')}
       onclick={() => {
-        dispatch({ type: 'VIEW_PAGE', value: WELCOME_PAGE });
+        dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE });
       }}>
       <Icon type="memorablewords" size={24} />
       <Spacer />
