@@ -138,7 +138,7 @@
       <List
         items={lists}
         onclick={listId => () => {
-          dispatch({ type: 'SET_CURRENT_LIST', value: listId });
+          dispatch({ type: 'SET_CURRENT_LIST_ID', value: listId });
           dispatch({ type: 'VIEW_PAGE', value: REVIEW_PAGE });
         }} />
     </div>

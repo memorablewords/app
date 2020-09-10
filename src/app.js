@@ -7,12 +7,14 @@ import {
   getPreferredLocaleFromStorage,
   getUserFromStorage,
   storageAvailable,
+  storeCurrentListId,
   storeDarkMode,
   storeFlipMode,
   storePreferredLocale,
   storeUser,
 } from "./storage";
 import {
+  currentListId,
   darkMode,
   flipMode,
   page,
@@ -36,6 +38,11 @@ function app(action) {
           value: getPreferredLocaleFromStorage(),
         });
       }
+      break;
+
+    case "SET_CURRENT_LIST_ID":
+      currentListId.update(() => action.value);
+      storeCurrentListId(action.value);
       break;
     case "SET_LOCALE":
       locale.set(action.value);

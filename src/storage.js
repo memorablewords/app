@@ -1,4 +1,5 @@
 export const ATTRIBUTION_KEY = "attribution-9432d";
+export const CURRENT_LIST_ID_KEY = "currentListId-84bfu";
 export const DARK_MODE_KEY = "darkMode-lduwe";
 export const FLIP_MODE_KEY = "flipMode-i874h";
 export const PREFERRED_LOCALE_KEY = "preferredLocale-owjfu";
@@ -6,6 +7,14 @@ export const USERNAME_KEY = "username-she3e";
 
 export function clear() {
   localStorage.clear();
+}
+
+export function storeCurrentListId(id) {
+  localStorage.setItem(CURRENT_LIST_ID_KEY, id);
+}
+
+export function getCurrentListIdFromStorage() {
+  return localStorage.getItem(CURRENT_LIST_ID_KEY);
 }
 
 export function storeDarkMode(mode) {
