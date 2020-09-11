@@ -23,7 +23,7 @@
 
   onMount(async () => {
     await asyncDispatch({
-      type: "LOAD_WORD",
+      type: "LOAD_LIST",
       value: $currentListId
     });
     loading = false;

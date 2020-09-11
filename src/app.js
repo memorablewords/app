@@ -1,6 +1,6 @@
 import { locale } from "svelte-i18n";
 import { get } from "svelte/store";
-import { addDecision, loadWord } from "./reviews.js";
+import { addDecision, loadList } from "./reviews.js";
 import {
   clear,
   getDarkModeFromStorage,
@@ -91,8 +91,8 @@ export function dispatch(action) {
 
 async function asyncApp(action) {
   switch (action.type) {
-    case "LOAD_WORD":
-      return loadWord(action.value);
+    case "LOAD_LIST":
+      return loadList(action.value);
     default:
       console.debug("🔮 Unknown async action type:", action.type);
   }

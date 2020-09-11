@@ -24,7 +24,7 @@ export function addDecision({ listId, word, decision }) {
   );
 }
 
-export async function loadWord(id) {
+export async function loadList(id) {
   return new Promise(async (resolve, reject) => {
     const local = get(lists);
 
