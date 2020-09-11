@@ -2,6 +2,7 @@
   import { _ } from "svelte-i18n";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
   export let items = [];
+  export let onclick = () => {};
 </script>
 
 <style>
@@ -13,7 +14,6 @@
     padding: 1px 0 0;
     margin: 0;
     list-style: none;
-    display: relative;
   }
 
   li {
@@ -67,6 +67,14 @@
         <div class="stack">
           <Text dimmed>{item.description}</Text>
         </div>
+        <Button
+          title={$_('dashboard_review_button_title')}
+          onclick={onclick(item.id)}
+          relaxed>
+          <Text>Review</Text>
+          <Spacer />
+          <Icon type="arrow-right" size={24} />
+        </Button>
       </li>
     {/each}
   </ul>
