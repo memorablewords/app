@@ -41,17 +41,13 @@ export async function loadWord(id) {
 
     lists.update(() => fresh);
 
-    let word = currentWord(get(lists), id);
-    if (word) {
-      resolve(word);
-    } else {
-      reject("no more words");
-    }
+    currentWord(get(lists), id);
+    resolve();
   });
 }
 
 export function currentWord(lists, listId) {
-  if (!lists || !listId) {
+  if (!lists || !listId || !lists[listId]) {
     return undefined;
   }
 

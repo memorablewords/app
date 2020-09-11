@@ -1,5 +1,6 @@
 <script>
   import { _ } from "svelte-i18n";
+  import { onMount } from "svelte";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
   import {
     currentListId,
@@ -16,6 +17,17 @@
 
   $: hidden = !$userPreferencesOpen;
   $: mirror = $flipMode;
+
+  let loading = true;
+  $: word = !loading && currentWord($lists, $currentListId);
+
+  onMount(async () => {
+    await asyncDispatch({
+      type: "LOAD_WORD",
+      value: $currentListId
+    });
+    loading = false;
+  });
 </script>
 
 <style>
@@ -167,16 +179,22 @@
   </header>
 
   <main>
-    {#await asyncDispatch({ type: 'LOAD_WORD', value: $currentListId })}
+    {#if loading}
       <div class="grid">
         <div class="main area">
           <Text element="p">Loading…</Text>
         </div>
       </div>
-    {:then word}
+    {:else if !word}
+      <div class="grid">
+        <div class="main area">
+          <Text element="p">Done!</Text>
+        </div>
+      </div>
+    {:else}
       <div class="grid" class:mirror>
         <div class="main area">
-          <Word word={currentWord($lists, $currentListId) || word} />
+          <Word {word} />
         </div>
         <div class="yes area">
           <Button
@@ -186,7 +204,7 @@
                 type: 'DECISION',
                 value: {
                   decision: 'DECISION_YES',
-                  word: currentWord($lists, $currentListId) || word,
+                  word: word,
                   listId: $currentListId
                 }
               })}
@@ -203,7 +221,7 @@
                 type: 'DECISION',
                 value: {
                   decision: 'DECISION_NO',
-                  word: currentWord($lists, $currentListId) || word,
+                  word: word,
                   listId: $currentListId
                 }
               })}
@@ -220,7 +238,7 @@
                 type: 'DECISION',
                 value: {
                   decision: 'DECISION_REJECT',
-                  word: currentWord($lists, $currentListId) || word,
+                  word: word,
                   listId: $currentListId
                 }
               })}
@@ -231,12 +249,6 @@
           </Button>
         </div>
       </div>
-    {:catch error}
-      <div class="grid">
-        <div class="main area">
-          <Text element="p">{error}</Text>
-        </div>
-      </div>
-    {/await}
+    {/if}
   </main>
 </section>
