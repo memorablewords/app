@@ -2,9 +2,9 @@
   import { Text } from "memorablewords-svelte-components";
 
   export let total = 0;
-  export let pending = 0;
+  export let reviewed = 0;
 
-  $: progress = (total * 100) / pending;
+  $: progress = (total * 100) / reviewed;
 </script>
 
 <style>
@@ -28,11 +28,11 @@
 </style>
 
 <div class="container">
-  <progress max={total} value={total - pending} />
+  <progress max={total} value={reviewed} />
 
   <div class="count">
     <Text>
-      <small>{total - pending} / {total}</small>
+      <small>{reviewed} / {total}</small>
     </Text>
   </div>
 </div>

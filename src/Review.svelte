@@ -2,24 +2,36 @@
   import { _ } from "svelte-i18n";
   import { onMount } from "svelte";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
+  import { asyncDispatch, dispatch } from "./app";
   import {
     currentListId,
     darkMode,
     flipMode,
     lists,
+    listsStats,
     user,
     userPreferencesOpen
   } from "./stores";
-  import { asyncDispatch, dispatch } from "./app";
-  import { DASHBOARD_PAGE, REVIEW_PAGE } from "./pages";
-  import Word from "./internal/Word.svelte";
   import { currentWord } from "./reviews";
+  import { DASHBOARD_PAGE, REVIEW_PAGE } from "./pages";
+  import Progress from "./internal/Progress.svelte";
+  import Word from "./internal/Word.svelte";
 
   $: hidden = !$userPreferencesOpen;
   $: mirror = $flipMode;
 
   let loading = true;
   $: word = !loading && currentWord($lists, $currentListId);
+  $: total =
+    !loading &&
+    $listsStats &&
+    $listsStats[$currentListId] &&
+    $listsStats[$currentListId].total;
+  $: reviewed =
+    !loading &&
+    $listsStats &&
+    $listsStats[$currentListId] &&
+    $listsStats[$currentListId].reviewed;
 
   onMount(async () => {
     await asyncDispatch({
@@ -61,11 +73,13 @@
     width: 100%;
     display: grid;
     grid-template-areas:
+      "progress progress"
       "main main"
       "reject no"
       "reject yes";
     grid-template-columns: auto auto;
     grid-template-rows:
+      calc(var(--app-touch-target-size) + 8px)
       auto
       calc(var(--app-touch-target-size) + 8px)
       calc(var(--app-touch-target-size) + 8px);
@@ -73,6 +87,7 @@
 
   .mirror {
     grid-template-areas:
+      "progress progress"
       "main main"
       "no reject"
       "yes reject";
@@ -82,6 +97,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .progress {
+    grid-area: progress;
   }
 
   .main {
@@ -193,6 +212,9 @@
       </div>
     {:else}
       <div class="grid" class:mirror>
+        <div class="progress area">
+          <Progress {total} {reviewed} />
+        </div>
         <div class="main area">
           <Word {word} />
         </div>
