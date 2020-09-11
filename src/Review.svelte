@@ -1,14 +1,19 @@
 <script>
   import { _ } from "svelte-i18n";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
-  import { darkMode, flipMode, user, userPreferencesOpen } from "./stores";
-  import { dispatch } from "./app";
+  import {
+    currentListId,
+    darkMode,
+    flipMode,
+    user,
+    userPreferencesOpen
+  } from "./stores";
+  import { asyncDispatch, dispatch } from "./app";
   import { DASHBOARD_PAGE, REVIEW_PAGE } from "./pages";
   import Word from "./internal/Word.svelte";
 
   $: hidden = !$userPreferencesOpen;
   $: mirror = $flipMode;
-  let current = { lemma: "ayuntamientismo" };
 </script>
 
 <style>
@@ -160,46 +165,61 @@
   </header>
 
   <main>
-    <div class="grid" class:mirror>
-      <div class="main area">
-        {#if current}
-          <Word word={current.lemma} />
-        {/if}
+    {#await asyncDispatch({ type: 'LOAD_WORD', value: $currentListId })}
+      <div class="grid">
+        <div class="main area">
+          <Text element="p">Loading…</Text>
+        </div>
       </div>
-      <div class="yes area">
-        <Button
-          type="check"
-          title="This word is fine"
-          onclick={() => dispatch({ type: 'DECISION', value: 'DECISION_YES' })}
-          blown>
-          <Text>YES</Text>
-          <Spacer />
-          <Icon type="check" size={24} />
-        </Button>
+    {:then word}
+      <div class="grid" class:mirror>
+        <div class="main area">
+          <Word {word} />
+        </div>
+        <div class="yes area">
+          <Button
+            type="check"
+            title="This word is fine"
+            onclick={() => dispatch({
+                type: 'DECISION',
+                value: 'DECISION_YES'
+              })}
+            blown>
+            <Text>YES</Text>
+            <Spacer />
+            <Icon type="check" size={24} />
+          </Button>
+        </div>
+        <div class="no area">
+          <Button
+            title="Don't use this word"
+            onclick={() => dispatch({ type: 'DECISION', value: 'DECISION_NO' })}
+            blown>
+            <Text>NO</Text>
+            <Spacer />
+            <Icon type="x" size={24} />
+          </Button>
+        </div>
+        <div class="reject area">
+          <Button
+            title="Reject this word"
+            onclick={() => dispatch({
+                type: 'DECISION',
+                value: 'DECISION_REJECT'
+              })}
+            blown>
+            <Text>No way!</Text>
+            <Spacer />
+            <Icon type="trash-2" size={24} />
+          </Button>
+        </div>
       </div>
-      <div class="no area">
-        <Button
-          title="Don't use this word"
-          onclick={() => dispatch({ type: 'DECISION', value: 'DECISION_NO' })}
-          blown>
-          <Text>NO</Text>
-          <Spacer />
-          <Icon type="x" size={24} />
-        </Button>
+    {:catch error}
+      <div class="grid">
+        <div class="main area">
+          <Text element="p">{error}</Text>
+        </div>
       </div>
-      <div class="reject area">
-        <Button
-          title="Reject this word"
-          onclick={() => dispatch({
-              type: 'DECISION',
-              value: 'DECISION_REJECT'
-            })}
-          blown>
-          <Text>No way!</Text>
-          <Spacer />
-          <Icon type="trash-2" size={24} />
-        </Button>
-      </div>
-    </div>
+    {/await}
   </main>
 </section>

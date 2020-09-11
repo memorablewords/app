@@ -1,5 +1,6 @@
 import { locale } from "svelte-i18n";
 import { get } from "svelte/store";
+import { loadWord } from "./reviews.js";
 import {
   clear,
   getDarkModeFromStorage,
@@ -84,4 +85,18 @@ function app(action) {
 export function dispatch(action) {
   console.debug("Action type:", action.type, "value:", action.value);
   app(action);
+}
+
+async function asyncApp(action) {
+  switch (action.type) {
+    case "LOAD_WORD":
+      return loadWord(action.value);
+    default:
+      console.debug("🔮 Unknown async action type:", action.type);
+  }
+}
+
+export async function asyncDispatch(action) {
+  console.debug("Async action type:", action.type, "value:", action.value);
+  return await asyncApp(action);
 }
