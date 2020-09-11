@@ -5,12 +5,14 @@ import {
   clear,
   getDarkModeFromStorage,
   getFlipModeFromStorage,
+  getListsFromStorage,
   getPreferredLocaleFromStorage,
   getUserFromStorage,
   storageAvailable,
   storeCurrentListId,
   storeDarkMode,
   storeFlipMode,
+  storeLists,
   storePreferredLocale,
   storeUser,
 } from "./storage";
@@ -18,6 +20,7 @@ import {
   currentListId,
   darkMode,
   flipMode,
+  lists,
   page,
   preferredLocale,
   user,
@@ -31,12 +34,14 @@ function app(action) {
       break;
     case "DECISION":
       addDecision(action.value);
+      storeLists(get(lists));
       break;
     case "INIT":
       if (storageAvailable("localStorage")) {
         user.update(() => getUserFromStorage());
         darkMode.update(() => getDarkModeFromStorage());
         flipMode.update(() => getFlipModeFromStorage());
+        lists.update(() => getListsFromStorage());
         dispatch({
           type: "SET_LOCALE",
           value: getPreferredLocaleFromStorage(),
@@ -92,7 +97,9 @@ export function dispatch(action) {
 async function asyncApp(action) {
   switch (action.type) {
     case "LOAD_LIST":
-      return loadList(action.value);
+      await loadList(action.value);
+      storeLists(get(lists));
+      return;
     default:
       console.debug("🔮 Unknown async action type:", action.type);
   }

@@ -30,14 +30,16 @@ export async function loadList(id) {
 
     let fresh = {};
 
-    if (!local[id]) {
+    if (local && !local[id]) {
       const url = `/data/${id}.json`;
       const response = await fetch(url);
       const upstream = await response.json();
       fresh[id] = upstream;
     }
 
-    fresh = merge(fresh, local);
+    if (local) {
+      fresh = merge(fresh, local);
+    }
 
     lists.update(() => fresh);
 

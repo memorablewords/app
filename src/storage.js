@@ -2,6 +2,7 @@ export const ATTRIBUTION_KEY = "attribution-9432d";
 export const CURRENT_LIST_ID_KEY = "currentListId-84bfu";
 export const DARK_MODE_KEY = "darkMode-lduwe";
 export const FLIP_MODE_KEY = "flipMode-i874h";
+export const LISTS_KEY = "lists-0dj48";
 export const PREFERRED_LOCALE_KEY = "preferredLocale-owjfu";
 export const USERNAME_KEY = "username-she3e";
 
@@ -31,6 +32,14 @@ export function storeFlipMode(mode) {
 
 export function getFlipModeFromStorage() {
   return localStorage.getItem(FLIP_MODE_KEY) === "true";
+}
+
+export function storeLists(lists) {
+  localStorage.setItem(LISTS_KEY, JSON.stringify(lists));
+}
+
+export function getListsFromStorage() {
+  return JSON.parse(localStorage.getItem(LISTS_KEY));
 }
 
 export function storePreferredLocale(mode) {
