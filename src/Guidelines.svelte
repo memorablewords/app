@@ -247,7 +247,7 @@
     <Button
       title={$_('signout_button_title')}
       onclick={() => {
-        dispatch({ type: 'UNSET_USER' });
+        dispatch({ type: 'SIGN_OUT' });
       }}
       relaxed>
       <Text>{$_('signout_button_text')}</Text>

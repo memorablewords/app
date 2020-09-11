@@ -74,8 +74,16 @@ function app(action) {
         !userPreferencesOpen ? true : false
       );
       break;
-    case "UNSET_USER":
-      user.update(() => undefined);
+    case "SIGN_OUT":
+      user.set(undefined);
+      lists.set({});
+      currentListId.set(undefined);
+      darkMode.set(false);
+      flipMode.set(false);
+      dispatch({
+        type: "SET_LOCALE",
+        value: "en",
+      });
       clear();
       break;
     case "VIEW_PAGE":
