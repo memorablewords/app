@@ -201,13 +201,13 @@
     {#if loading}
       <div class="grid">
         <div class="main area">
-          <Text element="p">Loading…</Text>
+          <Text element="p">{$_('review_list_loading')}</Text>
         </div>
       </div>
     {:else if !word}
       <div class="grid">
         <div class="main area">
-          <Text element="p">Done!</Text>
+          <Word word={$_('review_list_complete_congratulations')} />
         </div>
       </div>
     {:else}
@@ -221,7 +221,7 @@
         <div class="yes area">
           <Button
             type="check"
-            title="This word is fine"
+            title={$_('decision_button_yes_title')}
             onclick={() => dispatch({
                 type: 'DECISION',
                 value: {
@@ -231,14 +231,14 @@
                 }
               })}
             blown>
-            <Text>YES</Text>
+            <Text>{$_('decision_button_yes_text')}</Text>
             <Spacer />
             <Icon type="check" size={24} />
           </Button>
         </div>
         <div class="no area">
           <Button
-            title="Don't use this word"
+            title={$_('decision_button_no_title')}
             onclick={() => dispatch({
                 type: 'DECISION',
                 value: {
@@ -248,14 +248,14 @@
                 }
               })}
             blown>
-            <Text>NO</Text>
+            <Text>{$_('decision_button_no_text')}</Text>
             <Spacer />
             <Icon type="x" size={24} />
           </Button>
         </div>
         <div class="reject area">
           <Button
-            title="Reject this word"
+            title={$_('decision_button_reject_title')}
             onclick={() => dispatch({
                 type: 'DECISION',
                 value: {
@@ -265,7 +265,7 @@
                 }
               })}
             blown>
-            <Text>No way!</Text>
+            <Text>{$_('decision_button_reject_text')}</Text>
             <Spacer />
             <Icon type="trash-2" size={24} />
           </Button>
