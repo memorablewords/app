@@ -5,12 +5,14 @@
     currentListId,
     darkMode,
     flipMode,
+    lists,
     user,
     userPreferencesOpen
   } from "./stores";
   import { asyncDispatch, dispatch } from "./app";
   import { DASHBOARD_PAGE, REVIEW_PAGE } from "./pages";
   import Word from "./internal/Word.svelte";
+  import { currentWord } from "./reviews";
 
   $: hidden = !$userPreferencesOpen;
   $: mirror = $flipMode;
@@ -174,7 +176,7 @@
     {:then word}
       <div class="grid" class:mirror>
         <div class="main area">
-          <Word {word} />
+          <Word word={currentWord($lists, $currentListId) || word} />
         </div>
         <div class="yes area">
           <Button
@@ -182,7 +184,11 @@
             title="This word is fine"
             onclick={() => dispatch({
                 type: 'DECISION',
-                value: 'DECISION_YES'
+                value: {
+                  decision: 'DECISION_YES',
+                  word: currentWord($lists, $currentListId) || word,
+                  listId: $currentListId
+                }
               })}
             blown>
             <Text>YES</Text>
@@ -193,7 +199,14 @@
         <div class="no area">
           <Button
             title="Don't use this word"
-            onclick={() => dispatch({ type: 'DECISION', value: 'DECISION_NO' })}
+            onclick={() => dispatch({
+                type: 'DECISION',
+                value: {
+                  decision: 'DECISION_NO',
+                  word: currentWord($lists, $currentListId) || word,
+                  listId: $currentListId
+                }
+              })}
             blown>
             <Text>NO</Text>
             <Spacer />
@@ -205,7 +218,11 @@
             title="Reject this word"
             onclick={() => dispatch({
                 type: 'DECISION',
-                value: 'DECISION_REJECT'
+                value: {
+                  decision: 'DECISION_REJECT',
+                  word: currentWord($lists, $currentListId) || word,
+                  listId: $currentListId
+                }
               })}
             blown>
             <Text>No way!</Text>

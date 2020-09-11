@@ -1,6 +1,6 @@
 import { locale } from "svelte-i18n";
 import { get } from "svelte/store";
-import { loadWord } from "./reviews.js";
+import { addDecision, loadWord } from "./reviews.js";
 import {
   clear,
   getDarkModeFromStorage,
@@ -29,6 +29,9 @@ function app(action) {
     case "CLOSE_USER_PREFERENCES":
       userPreferencesOpen.update(() => false);
       break;
+    case "DECISION":
+      addDecision(action.value);
+      break;
     case "INIT":
       if (storageAvailable("localStorage")) {
         user.update(() => getUserFromStorage());
@@ -40,7 +43,6 @@ function app(action) {
         });
       }
       break;
-
     case "SET_CURRENT_LIST_ID":
       currentListId.update(() => action.value);
       storeCurrentListId(action.value);
