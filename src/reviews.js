@@ -62,7 +62,8 @@ export function currentWord(lists, listId) {
   );
 
   if (words.length > 0) {
-    return words[0][0]; // o_0
+    let pseudoRandomIndex = Math.floor(Math.random() * words.length);
+    return words[pseudoRandomIndex][0]; // o_0
   }
   return undefined;
 }
