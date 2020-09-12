@@ -30,7 +30,7 @@ export async function loadList(id) {
 
     let fresh = {};
 
-    if (local && !local[id]) {
+    if (!local || (local && !local[id])) {
       const url = `/data/${id}.json`;
       const response = await fetch(url);
       const upstream = await response.json();
