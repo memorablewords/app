@@ -17,6 +17,7 @@ import {
   storeUser,
 } from "./storage";
 import {
+  contributeTakeoverOpen,
   currentListId,
   darkMode,
   flipMode,
@@ -29,6 +30,9 @@ import {
 
 function app(action) {
   switch (action.type) {
+    case "CLOSE_CONTRIBUTE_TAKEOVER":
+      contributeTakeoverOpen.update(() => false);
+      break;
     case "CLOSE_USER_PREFERENCES":
       userPreferencesOpen.update(() => false);
       break;
@@ -61,6 +65,11 @@ function app(action) {
       user.update(() => action.value);
       storeUser(action.value);
       break;
+    case "TOGGLE_CONTRIBUTE_TAKEOVER":
+      contributeTakeoverOpen.update((contributeTakeoverOpen) =>
+        !contributeTakeoverOpen ? true : false
+      );
+      break;
     case "TOGGLE_DARK_MODE":
       darkMode.update((dark) => (!dark ? true : false));
       storeDarkMode(get(darkMode));
@@ -89,6 +98,9 @@ function app(action) {
     case "VIEW_PAGE":
       page.update(() => action.value);
       dispatch({
+        type: "CLOSE_CONTRIBUTE_TAKEOVER",
+      });
+      dispatch({
         type: "CLOSE_USER_PREFERENCES",
       });
       break;
@@ -104,6 +116,9 @@ export function dispatch(action) {
 
 async function asyncApp(action) {
   switch (action.type) {
+    case "DOWNLOAD_CONTRIBUTIONS":
+      console.debug("downloading…");
+      break;
     case "LOAD_LIST":
       await loadList(action.value);
       storeLists(get(lists));

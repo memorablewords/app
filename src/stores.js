@@ -10,6 +10,7 @@ export const page = writable(DASHBOARD_PAGE);
 export const preferredLocale = writable("en");
 export const user = writable(undefined);
 export const userPreferencesOpen = writable(false);
+export const contributeTakeoverOpen = writable(false);
 
 const stats = (reviewer, lists) => {
   if (!lists) {

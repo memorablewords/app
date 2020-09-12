@@ -1,8 +1,13 @@
 <script>
   import { _ } from "svelte-i18n";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
-  import { darkMode, user, userPreferencesOpen } from "./stores";
-  import { dispatch } from "./app";
+  import {
+    contributeTakeoverOpen,
+    darkMode,
+    user,
+    userPreferencesOpen
+  } from "./stores";
+  import { asyncDispatch, dispatch } from "./app";
   import { DASHBOARD_PAGE, GUIDELINES_PAGE, REVIEW_PAGE } from "./pages";
   import List from "./internal/List.svelte";
   import contributors from "./data/contributors.json";
@@ -10,7 +15,6 @@
 
   $: countributorCount = contributors.filter(u => u.username != $user.username)
     .length;
-  $: hidden = !$userPreferencesOpen;
 </script>
 
 <style>
@@ -106,7 +110,29 @@
     {/if}
 
     {#if $user}
-      <div class="push raise">
+      <div class="push" class:raise={$contributeTakeoverOpen}>
+        {#if $contributeTakeoverOpen}
+          <Button
+            title={$_('contribute_takeover_toggle_button_open_title')}
+            onclick={() => {
+              dispatch({ type: 'TOGGLE_CONTRIBUTE_TAKEOVER' });
+            }}>
+            <Icon type="x" size={24} />
+          </Button>
+        {:else}
+          <Button
+            title={$_('contribute_takeover_toggle_button_closed_title')}
+            onclick={() => {
+              dispatch({ type: 'TOGGLE_CONTRIBUTE_TAKEOVER' });
+            }}>
+            <Icon type="upload" size={24} />
+          </Button>
+        {/if}
+      </div>
+    {/if}
+
+    {#if $user}
+      <div class="push" class:raise={$userPreferencesOpen}>
         {#if $userPreferencesOpen}
           <Button
             title={$_('user_preferences_toggle_button_open_title')}
@@ -152,7 +178,19 @@
     </Text>
   </footer>
 
-  <aside class:hidden>
+  <aside class:hidden={!$contributeTakeoverOpen}>
+    <Button
+      title={$_('download_contributions_button_title')}
+      onclick={() => {
+        asyncDispatch({ type: 'DOWNLOAD_CONTRIBUTIONS' });
+      }}
+      relaxed>
+      <Icon type="download" size={24} />
+      <Spacer />
+      <Text>{$_('download_contributions_button_text')}</Text>
+    </Button>
+  </aside>
+  <aside class:hidden={!$userPreferencesOpen}>
     <Button
       title={$_('signout_button_title')}
       onclick={() => {

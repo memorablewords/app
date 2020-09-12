@@ -4,6 +4,7 @@
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
   import { asyncDispatch, dispatch } from "./app";
   import {
+    contributeTakeoverOpen,
     currentListId,
     darkMode,
     flipMode,
@@ -16,9 +17,6 @@
   import { DASHBOARD_PAGE, REVIEW_PAGE } from "./pages";
   import Progress from "./internal/Progress.svelte";
   import Word from "./internal/Word.svelte";
-
-  $: hidden = !$userPreferencesOpen;
-  $: mirror = $flipMode;
 
   let loading = true;
   $: word = !loading && currentWord($lists, $currentListId);
@@ -143,6 +141,25 @@
     grid-area: reject;
     margin: 0 0 0 2px;
   }
+
+  .hidden {
+    display: none;
+  }
+
+  .raise {
+    z-index: 1;
+  }
+
+  aside {
+    align-items: center;
+    background-color: var(--second-color);
+    box-sizing: border-box;
+    display: flex;
+    height: calc(100% - calc(2 * var(--app-padding)));
+    justify-content: center;
+    position: absolute;
+    width: calc(100% - calc(2 * var(--app-padding)));
+  }
 </style>
 
 <section>
@@ -176,6 +193,27 @@
       </Button>
     {/if}
 
+    {#if $user}
+      <div class="push" class:raise={$contributeTakeoverOpen}>
+        {#if $contributeTakeoverOpen}
+          <Button
+            title={$_('contribute_takeover_toggle_button_open_title')}
+            onclick={() => {
+              dispatch({ type: 'TOGGLE_CONTRIBUTE_TAKEOVER' });
+            }}>
+            <Icon type="x" size={24} />
+          </Button>
+        {:else}
+          <Button
+            title={$_('contribute_takeover_toggle_button_closed_title')}
+            onclick={() => {
+              dispatch({ type: 'TOGGLE_CONTRIBUTE_TAKEOVER' });
+            }}>
+            <Icon type="upload" size={24} />
+          </Button>
+        {/if}
+      </div>
+    {/if}
     <div class="push">
       {#if $flipMode}
         <Button
@@ -211,7 +249,7 @@
         </div>
       </div>
     {:else}
-      <div class="grid" class:mirror>
+      <div class="grid" class:mirror={$flipMode}>
         <div class="progress area">
           <Progress {total} {reviewed} />
         </div>
@@ -273,4 +311,17 @@
       </div>
     {/if}
   </main>
+
+  <aside class:hidden={!$contributeTakeoverOpen}>
+    <Button
+      title={$_('download_contributions_button_title')}
+      onclick={() => {
+        asyncDispatch({ type: 'DOWNLOAD_CONTRIBUTIONS' });
+      }}
+      relaxed>
+      <Icon type="download" size={24} />
+      <Spacer />
+      <Text>{$_('download_contributions_button_text')}</Text>
+    </Button>
+  </aside>
 </section>
