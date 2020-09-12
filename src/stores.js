@@ -1,4 +1,5 @@
 import merge from "deepmerge";
+import moment from "moment";
 import { derived, writable } from "svelte/store";
 import { DASHBOARD_PAGE } from "./pages";
 
@@ -34,4 +35,16 @@ const stats = (reviewer, lists) => {
 
 export const listsStats = derived([user, lists], ([$user, $lists]) =>
   stats($user.username, $lists)
+);
+
+const userContributions = (user, lists) => {
+  return JSON.stringify({
+    reviewer: user,
+    contributedAt: moment().utc().format(),
+    lists: lists,
+  });
+};
+
+export const contributions = derived([user, lists], ([$user, $lists]) =>
+  userContributions($user, $lists)
 );
