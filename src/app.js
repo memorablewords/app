@@ -1,5 +1,7 @@
+import moment from "moment";
 import { locale } from "svelte-i18n";
 import { get } from "svelte/store";
+import { download } from "./download.js";
 import { addDecision, loadList } from "./reviews.js";
 import {
   clear,
@@ -18,6 +20,7 @@ import {
 } from "./storage";
 import {
   contributeTakeoverOpen,
+  contributions,
   currentListId,
   darkMode,
   flipMode,
@@ -117,8 +120,11 @@ export function dispatch(action) {
 async function asyncApp(action) {
   switch (action.type) {
     case "DOWNLOAD_CONTRIBUTIONS":
-      console.debug("downloading…");
-      break;
+      const filename = `contribution-memorable-words-${moment()
+        .utc()
+        .format("YYYY-MM-DD-HH-mm-ss")}.json`;
+      download(filename, get(contributions));
+      return;
     case "LOAD_LIST":
       await loadList(action.value);
       storeLists(get(lists));

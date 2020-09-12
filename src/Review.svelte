@@ -15,6 +15,7 @@
   } from "./stores";
   import { currentWord } from "./reviews";
   import { DASHBOARD_PAGE, REVIEW_PAGE } from "./pages";
+  import ContributeTakeover from "./ContributeTakeover.svelte";
   import Progress from "./internal/Progress.svelte";
   import Word from "./internal/Word.svelte";
 
@@ -158,6 +159,7 @@
     flex-direction: column;
     height: calc(100% - calc(2 * var(--app-padding)));
     justify-content: space-evenly;
+    padding: var(--app-touch-target-size) calc(3 * var(--app-padding));
     position: absolute;
     width: calc(100% - calc(2 * var(--app-padding)));
   }
@@ -314,15 +316,6 @@
   </main>
 
   <aside class:hidden={!$contributeTakeoverOpen}>
-    <Button
-      title={$_('download_contributions_button_title')}
-      onclick={() => {
-        asyncDispatch({ type: 'DOWNLOAD_CONTRIBUTIONS' });
-      }}
-      relaxed>
-      <Icon type="download" size={24} />
-      <Spacer />
-      <Text>{$_('download_contributions_button_text')}</Text>
-    </Button>
+    <ContributeTakeover />
   </aside>
 </section>
