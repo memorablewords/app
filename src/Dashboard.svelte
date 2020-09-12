@@ -8,10 +8,12 @@
     user,
     userPreferencesOpen
   } from "./stores";
+
   import { asyncDispatch, dispatch } from "./app";
   import { DASHBOARD_PAGE, GUIDELINES_PAGE, REVIEW_PAGE } from "./pages";
-  import List from "./internal/List.svelte";
+  import ContributeTakeover from "./ContributeTakeover.svelte";
   import contributors from "./data/contributors.json";
+  import List from "./internal/List.svelte";
   import lists from "./data/lists.json";
 
   $: countributorCount = contributors.filter(u => u.username != $user.username)
@@ -75,6 +77,7 @@
     flex-direction: column;
     height: calc(100% - calc(2 * var(--app-padding)));
     justify-content: space-evenly;
+    padding: var(--app-touch-target-size) calc(3 * var(--app-padding));
     position: absolute;
     width: calc(100% - calc(2 * var(--app-padding)));
   }
@@ -181,16 +184,7 @@
   </footer>
 
   <aside class:hidden={!$contributeTakeoverOpen}>
-    <Button
-      title={$_('download_contributions_button_title')}
-      onclick={() => {
-        asyncDispatch({ type: 'DOWNLOAD_CONTRIBUTIONS' });
-      }}
-      relaxed>
-      <Icon type="download" size={24} />
-      <Spacer />
-      <Text>{$_('download_contributions_button_text')}</Text>
-    </Button>
+    <ContributeTakeover />
   </aside>
   <aside class:hidden={!$userPreferencesOpen}>
     {#if $preferredLocale === 'en'}
