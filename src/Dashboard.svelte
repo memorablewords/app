@@ -4,6 +4,7 @@
   import {
     contributeTakeoverOpen,
     darkMode,
+    preferredLocale,
     user,
     userPreferencesOpen
   } from "./stores";
@@ -71,8 +72,9 @@
     background-color: var(--second-color);
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     height: calc(100% - calc(2 * var(--app-padding)));
-    justify-content: center;
+    justify-content: space-evenly;
     position: absolute;
     width: calc(100% - calc(2 * var(--app-padding)));
   }
@@ -191,6 +193,21 @@
     </Button>
   </aside>
   <aside class:hidden={!$userPreferencesOpen}>
+    {#if $preferredLocale === 'en'}
+      <Button
+        title={$_('locale_button_es_title')}
+        onclick={() => dispatch({ type: 'SET_LOCALE', value: 'es' })}
+        relaxed>
+        <Text>{$_('locale_button_es_text')}</Text>
+      </Button>
+    {:else}
+      <Button
+        title={$_('locale_button_en_title')}
+        onclick={() => dispatch({ type: 'SET_LOCALE', value: 'en' })}
+        relaxed>
+        <Text>{$_('locale_button_en_text')}</Text>
+      </Button>
+    {/if}
     <Button
       title={$_('signout_button_title')}
       onclick={() => {

@@ -155,8 +155,9 @@
     background-color: var(--second-color);
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     height: calc(100% - calc(2 * var(--app-padding)));
-    justify-content: center;
+    justify-content: space-evenly;
     position: absolute;
     width: calc(100% - calc(2 * var(--app-padding)));
   }
