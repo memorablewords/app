@@ -9,7 +9,7 @@ export function download(filename, data) {
     elem.download = filename;
     document.body.appendChild(elem);
     elem.click();
-    window.URL.revokeObjectURL(elem.href);
+    // window.URL.revokeObjectURL(elem.href); // WebkitBlobResource error 1 on iOS 13.7
     document.body.removeChild(elem);
   }
 }
