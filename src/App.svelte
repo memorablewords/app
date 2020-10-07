@@ -41,8 +41,8 @@
       max-width: 380px;
       max-height: 720px;
       margin: 16px auto;
-      border-radius: 16px;
-      border: 1px solid var(--app-primary-color);
+      border-radius: 8px;
+      border: 4px solid var(--app-primary-color);
       overflow: scroll;
     }
   }

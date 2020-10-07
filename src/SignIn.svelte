@@ -134,7 +134,8 @@
           }
         }}
         disabled={!valid}
-        relaxed>
+        relaxed
+        border>
         <Text>{buttonText}</Text>
       </Button>
     </form>

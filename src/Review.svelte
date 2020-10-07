@@ -169,6 +169,7 @@
   <header>
     <Button
       title={$_('home_button_title')}
+      disabled={$contributeTakeoverOpen || $userPreferencesOpen}
       onclick={() => {
         dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE });
       }}>
@@ -181,6 +182,7 @@
     {#if $darkMode}
       <Button
         title={$_('dark_mode_toggle_button_dark_title')}
+        disabled={$contributeTakeoverOpen || $userPreferencesOpen}
         onclick={() => {
           dispatch({ type: 'TOGGLE_DARK_MODE' });
         }}>
@@ -189,6 +191,7 @@
     {:else}
       <Button
         title={$_('dark_mode_toggle_button_light_title')}
+        disabled={$contributeTakeoverOpen || $userPreferencesOpen}
         onclick={() => {
           dispatch({ type: 'TOGGLE_DARK_MODE' });
         }}>
@@ -201,6 +204,7 @@
         {#if $contributeTakeoverOpen}
           <Button
             title={$_('contribute_takeover_toggle_button_open_title')}
+            disabled={$userPreferencesOpen}
             onclick={() => {
               dispatch({ type: 'TOGGLE_CONTRIBUTE_TAKEOVER' });
             }}>
@@ -209,6 +213,7 @@
         {:else}
           <Button
             title={$_('contribute_takeover_toggle_button_closed_title')}
+            disabled={$userPreferencesOpen}
             onclick={() => {
               dispatch({ type: 'TOGGLE_CONTRIBUTE_TAKEOVER' });
             }}>
@@ -221,6 +226,7 @@
       {#if $flipMode}
         <Button
           title={$_('flip_mode_toggle_button_left_title')}
+          disabled={$contributeTakeoverOpen || $userPreferencesOpen}
           onclick={() => {
             dispatch({ type: 'TOGGLE_HAND_MODE' });
           }}>
@@ -229,6 +235,7 @@
       {:else}
         <Button
           title={$_('flip_mode_toggle_button_right_title')}
+          disabled={$contributeTakeoverOpen || $userPreferencesOpen}
           onclick={() => {
             dispatch({ type: 'TOGGLE_HAND_MODE' });
           }}>
@@ -238,7 +245,7 @@
     </div>
   </header>
 
-  <main>
+  <main class:hidden={$userPreferencesOpen || $contributeTakeoverOpen}>
     {#if loading}
       <div class="grid">
         <div class="main area">
@@ -263,6 +270,7 @@
           <Button
             type="check"
             title={$_('decision_button_yes_title')}
+            disabled={$contributeTakeoverOpen || $userPreferencesOpen}
             onclick={() => dispatch({
                 type: 'DECISION',
                 value: {
@@ -271,7 +279,9 @@
                   listId: $currentListId
                 }
               })}
-            blown>
+            blown
+            border
+            subtle>
             <Text>{$_('decision_button_yes_text')}</Text>
             <Spacer />
             <Icon type="check" size={24} />
@@ -280,6 +290,7 @@
         <div class="no area">
           <Button
             title={$_('decision_button_no_title')}
+            disabled={$contributeTakeoverOpen || $userPreferencesOpen}
             onclick={() => dispatch({
                 type: 'DECISION',
                 value: {
@@ -288,7 +299,9 @@
                   listId: $currentListId
                 }
               })}
-            blown>
+            blown
+            border
+            subtle>
             <Text>{$_('decision_button_no_text')}</Text>
             <Spacer />
             <Icon type="x" size={24} />
@@ -297,6 +310,7 @@
         <div class="reject area">
           <Button
             title={$_('decision_button_reject_title')}
+            disabled={$contributeTakeoverOpen || $userPreferencesOpen}
             onclick={() => dispatch({
                 type: 'DECISION',
                 value: {
@@ -305,7 +319,9 @@
                   listId: $currentListId
                 }
               })}
-            blown>
+            blown
+            border
+            subtle>
             <Text>{$_('decision_button_reject_text')}</Text>
             <Spacer />
             <Icon type="trash-2" size={24} />
@@ -316,6 +332,6 @@
   </main>
 
   <aside class:hidden={!$contributeTakeoverOpen}>
-    <ContributeTakeover />
+    <ContributeTakeover disabled={!$contributeTakeoverOpen} />
   </aside>
 </section>

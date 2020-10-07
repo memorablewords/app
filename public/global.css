@@ -1,8 +1,8 @@
 :root {
   --app-primary-color: #1c1f23;
   --alternate-color: #1c1f23;
-  --overlay-color: #fafbfcc8;
-  --second-color: #fafbfc;
+  --overlay-color: #f9f9fbc8;
+  --second-color: #f9f9fb;
   --overlay-border-color: var(--alternate-color);
   --app-link-color: #0069d1;
   --app-padding: 8px;
@@ -16,14 +16,15 @@
   --button-size: var(--app-touch-target-size);
   --button-gap: calc(var(--app-padding) / 2);
   --spacer-size: var(--button-gap);
+  --button-disabled-color: var(--muted-color);
 
   --color-text-dimmed: var(--muted-color);
 }
 
 .dark {
   --second-color: #1c1f23;
-  --alternate-color: #fafbfc;
-  --app-primary-color: #fafbfc;
+  --alternate-color: #f9f9fb;
+  --app-primary-color: #f9f9fb;
   --overlay-color: #1c1f23c8;
   --overlay-border-color: var(--alternate-color);
   --app-link-color: #2491ff;
@@ -58,7 +59,6 @@ a:focus {
 }
 
 .logo {
-  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI,
-    Roboto, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
   letter-spacing: 0.075em;
 }

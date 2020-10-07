@@ -87,6 +87,7 @@
   <header>
     <Button
       title={$_('home_button_title')}
+      disabled={$contributeTakeoverOpen || $userPreferencesOpen}
       onclick={() => {
         dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE });
       }}>
@@ -99,6 +100,7 @@
     {#if $darkMode}
       <Button
         title={$_('dark_mode_toggle_button_dark_title')}
+        disabled={$contributeTakeoverOpen || $userPreferencesOpen}
         onclick={() => {
           dispatch({ type: 'TOGGLE_DARK_MODE' });
         }}>
@@ -107,6 +109,7 @@
     {:else}
       <Button
         title={$_('dark_mode_toggle_button_light_title')}
+        disabled={$contributeTakeoverOpen || $userPreferencesOpen}
         onclick={() => {
           dispatch({ type: 'TOGGLE_DARK_MODE' });
         }}>
@@ -119,6 +122,7 @@
         {#if $contributeTakeoverOpen}
           <Button
             title={$_('contribute_takeover_toggle_button_open_title')}
+            disabled={$userPreferencesOpen}
             onclick={() => {
               dispatch({ type: 'TOGGLE_CONTRIBUTE_TAKEOVER' });
             }}>
@@ -127,6 +131,7 @@
         {:else}
           <Button
             title={$_('contribute_takeover_toggle_button_closed_title')}
+            disabled={$userPreferencesOpen}
             onclick={() => {
               dispatch({ type: 'TOGGLE_CONTRIBUTE_TAKEOVER' });
             }}>
@@ -141,6 +146,7 @@
         {#if $userPreferencesOpen}
           <Button
             title={$_('user_preferences_toggle_button_open_title')}
+            disabled={$contributeTakeoverOpen}
             onclick={() => {
               dispatch({ type: 'TOGGLE_USER_PREFERENCES' });
             }}>
@@ -149,6 +155,7 @@
         {:else}
           <Button
             title={$_('user_preferences_toggle_button_closed_title')}
+            disabled={$contributeTakeoverOpen}
             onclick={() => {
               dispatch({ type: 'TOGGLE_USER_PREFERENCES' });
             }}>
@@ -159,7 +166,7 @@
     {/if}
   </header>
 
-  <main>
+  <main class:hidden={$userPreferencesOpen || $contributeTakeoverOpen}>
     <div class="contributors">
       <Text>
         {@html $_('contributor_count', { values: { n: countributorCount } })}
@@ -168,6 +175,7 @@
     <div class="list">
       <List
         items={lists}
+        disabled={$contributeTakeoverOpen || $userPreferencesOpen}
         onclick={listId => () => {
           dispatch({ type: 'SET_CURRENT_LIST_ID', value: listId });
           dispatch({ type: 'VIEW_PAGE', value: REVIEW_PAGE });
@@ -184,30 +192,36 @@
   </footer>
 
   <aside class:hidden={!$contributeTakeoverOpen}>
-    <ContributeTakeover />
+    <ContributeTakeover disabled={!$contributeTakeoverOpen} />
   </aside>
   <aside class:hidden={!$userPreferencesOpen}>
     {#if $preferredLocale === 'en'}
       <Button
         title={$_('locale_button_es_title')}
         onclick={() => dispatch({ type: 'SET_LOCALE', value: 'es' })}
-        relaxed>
+        disabled={!$userPreferencesOpen}
+        relaxed
+        border>
         <Text>{$_('locale_button_es_text')}</Text>
       </Button>
     {:else}
       <Button
         title={$_('locale_button_en_title')}
         onclick={() => dispatch({ type: 'SET_LOCALE', value: 'en' })}
-        relaxed>
+        disabled={!$userPreferencesOpen}
+        relaxed
+        border>
         <Text>{$_('locale_button_en_text')}</Text>
       </Button>
     {/if}
     <Button
       title={$_('signout_button_title')}
+      disabled={!$userPreferencesOpen}
       onclick={() => {
         dispatch({ type: 'SIGN_OUT' });
       }}
-      relaxed>
+      relaxed
+      border>
       <Text>{$_('signout_button_text')}</Text>
     </Button>
   </aside>
