@@ -166,7 +166,7 @@
     {/if}
   </header>
 
-  <main>
+  <main class:hidden={$userPreferencesOpen || $contributeTakeoverOpen}>
     <div class="contributors">
       <Text>
         {@html $_('contributor_count', { values: { n: countributorCount } })}

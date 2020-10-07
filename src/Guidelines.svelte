@@ -9,8 +9,6 @@
   } from "./stores";
   import { dispatch } from "./app";
   import { DASHBOARD_PAGE } from "./pages";
-
-  $: hidden = !$userPreferencesOpen;
 </script>
 
 <style>
@@ -146,7 +144,7 @@
     {/if}
   </header>
 
-  <main>
+  <main class:hidden={$userPreferencesOpen}>
     <Text stacked element="h2" display="header">Guidelines</Text>
 
     <Text stacked element="h2" display="header">
@@ -255,7 +253,7 @@
     </Text>
   </footer>
 
-  <aside class:hidden>
+  <aside class:hidden={!$userPreferencesOpen}>
     <Button
       title={$_('signout_button_title')}
       onclick={() => {

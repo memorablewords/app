@@ -245,7 +245,7 @@
     </div>
   </header>
 
-  <main>
+  <main class:hidden={$userPreferencesOpen || $contributeTakeoverOpen}>
     {#if loading}
       <div class="grid">
         <div class="main area">
