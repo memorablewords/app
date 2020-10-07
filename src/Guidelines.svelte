@@ -1,7 +1,12 @@
 <script>
   import { _ } from "svelte-i18n";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
-  import { darkMode, user, userPreferencesOpen } from "./stores";
+  import {
+    contributeTakeoverOpen,
+    darkMode,
+    user,
+    userPreferencesOpen
+  } from "./stores";
   import { dispatch } from "./app";
   import { DASHBOARD_PAGE } from "./pages";
 
@@ -86,6 +91,7 @@
   <header>
     <Button
       title={$_('home_button_title')}
+      disabled={$contributeTakeoverOpen || $userPreferencesOpen}
       onclick={() => {
         dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE });
       }}>
@@ -98,6 +104,7 @@
     {#if $darkMode}
       <Button
         title={$_('dark_mode_toggle_button_dark_title')}
+        disabled={$contributeTakeoverOpen || $userPreferencesOpen}
         onclick={() => {
           dispatch({ type: 'TOGGLE_DARK_MODE' });
         }}>
@@ -106,6 +113,7 @@
     {:else}
       <Button
         title={$_('dark_mode_toggle_button_light_title')}
+        disabled={$contributeTakeoverOpen || $userPreferencesOpen}
         onclick={() => {
           dispatch({ type: 'TOGGLE_DARK_MODE' });
         }}>
@@ -118,6 +126,7 @@
         {#if $userPreferencesOpen}
           <Button
             title={$_('user_preferences_toggle_button_open_title')}
+            disabled={$contributeTakeoverOpen}
             onclick={() => {
               dispatch({ type: 'TOGGLE_USER_PREFERENCES' });
             }}>
@@ -126,6 +135,7 @@
         {:else}
           <Button
             title={$_('user_preferences_toggle_button_closed_title')}
+            disabled={$contributeTakeoverOpen}
             onclick={() => {
               dispatch({ type: 'TOGGLE_USER_PREFERENCES' });
             }}>
@@ -226,10 +236,12 @@
     <div class="push next">
       <Button
         title={$_('acknowledge_guidelines_button_title')}
+        disabled={$contributeTakeoverOpen || $userPreferencesOpen}
         onclick={() => {
           dispatch({ type: 'VIEW_PAGE', value: DASHBOARD_PAGE });
         }}
-        relaxed>
+        relaxed
+        border>
         <Text>{$_('acknowledge_guidelines_button_text')}</Text>
       </Button>
     </div>
@@ -249,7 +261,8 @@
       onclick={() => {
         dispatch({ type: 'SIGN_OUT' });
       }}
-      relaxed>
+      relaxed
+      border>
       <Text>{$_('signout_button_text')}</Text>
     </Button>
   </aside>

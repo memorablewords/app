@@ -56,14 +56,16 @@
         <Button
           title={$_('locale_button_es_title')}
           onclick={() => dispatch({ type: 'SET_LOCALE', value: 'es' })}
-          relaxed>
+          relaxed
+          border>
           <Text>{$_('locale_button_es_text')}</Text>
         </Button>
       {:else}
         <Button
           title={$_('locale_button_en_title')}
           onclick={() => dispatch({ type: 'SET_LOCALE', value: 'en' })}
-          relaxed>
+          relaxed
+          border>
           <Text>{$_('locale_button_en_text')}</Text>
         </Button>
       {/if}
@@ -76,7 +78,8 @@
     <Button
       title={$_('start_button_title')}
       onclick={() => dispatch({ type: 'VIEW_PAGE', value: SIGN_IN_PAGE })}
-      relaxed>
+      relaxed
+      border>
       <Text>{$_('start_button_text')}</Text>
     </Button>
   </main>

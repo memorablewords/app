@@ -1,6 +1,7 @@
 <script>
   import { _ } from "svelte-i18n";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
+  export let disabled = false;
   export let items = [];
   export let onclick = () => {};
 </script>
@@ -70,7 +71,9 @@
         <Button
           title={$_('dashboard_review_button_title')}
           onclick={onclick(item.id)}
-          relaxed>
+          {disabled}
+          relaxed
+          border>
           <Text>Review</Text>
           <Spacer />
           <Icon type="arrow-right" size={24} />

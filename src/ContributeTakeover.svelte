@@ -2,6 +2,7 @@
   import { _ } from "svelte-i18n";
   import { Button, Icon, Spacer, Text } from "memorablewords-svelte-components";
   import { asyncDispatch, dispatch } from "./app";
+  export let disabled = false;
 </script>
 
 <Text element="h2" display="header">Send your contributions</Text>
@@ -11,7 +12,9 @@
   onclick={() => {
     asyncDispatch({ type: 'DOWNLOAD_CONTRIBUTIONS' });
   }}
-  relaxed>
+  {disabled}
+  relaxed
+  border>
   <Icon type="download" size={24} />
   <Spacer />
   <Text>{$_('download_contributions_button_text')}</Text>
@@ -33,7 +36,9 @@
   onclick={() => {
     dispatch({ type: 'TOGGLE_CONTRIBUTE_TAKEOVER' });
   }}
-  relaxed>
+  {disabled}
+  relaxed
+  border>
   <Text>Done, I've sent the email</Text>
   <Spacer />
   <Icon type="check" size={24} />
